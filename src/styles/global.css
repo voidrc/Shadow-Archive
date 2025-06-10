@@ -5,14 +5,20 @@
  */
 
 :root {
-	/* Eye-friendly terminal colors */
-	--terminal-green: #9cdcfe;      /* Soft blue-green */
-	--terminal-dark-green: #4ec9b0; /* Muted teal */
-	--terminal-bg: #1e1e1e;         /* Dark gray instead of pure black */
-	--terminal-code-bg: #252526;    /* Slightly lighter than background */
-	--terminal-border: #3c3c3c;     /* Subtle border color */
-	--terminal-accent: #569cd6;     /* Soft blue for accents */
-	--terminal-text: #d4d4d4;       /* Off-white for better readability */
+	/* Dracula Theme Colors */
+	--terminal-bg: #282a36;         /* Background */
+	--terminal-current-line: #44475a; /* Current Line */
+	--terminal-selection: #44475a;   /* Selection */
+	--terminal-foreground: #f8f8f2;  /* Foreground */
+	--terminal-comment: #6272a4;     /* Comment */
+	--terminal-cyan: #8be9fd;        /* Cyan */
+	--terminal-green: #50fa7b;       /* Green */
+	--terminal-orange: #ffb86c;      /* Orange */
+	--terminal-pink: #ff79c6;        /* Pink */
+	--terminal-purple: #bd93f9;      /* Purple */
+	--terminal-red: #ff5555;         /* Red */
+	--terminal-yellow: #f1fa8c;      /* Yellow */
+	--terminal-border: #44475a;      /* Border */
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -46,7 +52,7 @@
 
 body {
     background-color: var(--terminal-bg);
-    color: var(--terminal-text);
+    color: var(--terminal-foreground);
     font-family: 'Fira Code', 'Source Code Pro', monospace;
     line-height: 1.6;
     margin: 0;
@@ -76,12 +82,12 @@ main {
     padding: 3em 1em;
     border: 1px solid var(--terminal-border);
     border-radius: 4px;
-    background-color: rgba(30, 30, 30, 0.3);
-    box-shadow: 0 0 10px rgba(78, 201, 176, 0.1);
+    background-color: rgba(40, 42, 54, 0.3);
+    box-shadow: 0 0 10px rgba(189, 147, 249, 0.1);
 }
 
 h1, h2, h3, h4 {
-    color: var(--terminal-accent);
+    color: var(--terminal-purple);
     font-family: 'Fira Code', monospace;
     border-bottom: 1px solid var(--terminal-border);
     padding-bottom: 0.3em;
@@ -137,9 +143,9 @@ b {
 }
 
 a {
-    color: var(--terminal-accent);
+    color: var(--terminal-cyan);
     text-decoration: none;
-    border-bottom: 1px dotted var(--terminal-accent);
+    border-bottom: 1px dotted var(--terminal-cyan);
     transition: all 0.2s ease;
 }
 /*a {
@@ -147,9 +153,9 @@ a {
 }*/
 
 a:hover {
-    color: var(--terminal-dark-green);
-    border-bottom: 1px solid var(--terminal-dark-green);
-    text-shadow: 0 0 8px rgba(78, 201, 176, 0.3);
+    color: var(--terminal-pink);
+    border-bottom: 1px solid var(--terminal-pink);
+    text-shadow: 0 0 8px rgba(255, 121, 198, 0.3);
 }
 
 
@@ -179,7 +185,7 @@ img {
 }
 
 code {
-    background-color: var(--terminal-code-bg);
+    background-color: var(--terminal-current-line);
     color: var(--terminal-green);
     padding: 0.2em 0.4em;
     border-radius: 4px;
@@ -193,11 +199,11 @@ code {
 }*/
 
 pre {
-    background-color: var(--terminal-code-bg);
+    background-color: var(--terminal-current-line);
     padding: 1em;
     border-radius: 4px;
     overflow-x: auto;
-    color: var(--terminal-green);
+    color: var(--terminal-foreground);
     font-family: 'Fira Code', monospace;
     border: 1px solid var(--terminal-border);
     position: relative;
@@ -211,11 +217,11 @@ pre > code {
     border: none;
 }
 blockquote {
-    border-left: 4px solid var(--terminal-accent);
+    border-left: 4px solid var(--terminal-purple);
     padding: 0 0 0 20px;
     margin: 0px;
     font-style: italic;
-    color: var(--terminal-dark-green);
+    color: var(--terminal-comment);
 }
 hr {
     border: none;
@@ -239,7 +245,7 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--terminal-dark-green);
+    background: var(--terminal-purple);
 }
 
 /* Terminal cursor effect */
@@ -253,15 +259,15 @@ hr {
     display: inline-block;
     width: 2px;
     height: 1em;
-    background-color: var(--terminal-accent);
+    background-color: var(--terminal-pink);
     margin-left: 2px;
     animation: blink 1s infinite;
 }
 
 /* Selection color */
 ::selection {
-    background-color: var(--terminal-accent);
-    color: var(--terminal-bg);
+    background-color: var(--terminal-selection);
+    color: var(--terminal-foreground);
 }
 
 /* Table styles */
@@ -272,8 +278,8 @@ th, td {
 }
 
 th {
-    background-color: var(--terminal-code-bg);
-    color: var(--terminal-accent);
+    background-color: var(--terminal-current-line);
+    color: var(--terminal-purple);
 }
 
 @media (max-width: 720px) {
