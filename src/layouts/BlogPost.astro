@@ -14,44 +14,83 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 		<style>
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
+				background-color: var(--terminal-bg);
 			}
 			.hero-image {
 				width: 100%;
+				margin-bottom: 2em;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				border-radius: 4px;
+				border: 1px solid var(--terminal-border);
+				box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
 			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: var(--terminal-green);
 			}
 			.title {
-				margin-bottom: 1em;
+				margin-bottom: 2em;
 				padding: 1em 0;
 				text-align: center;
 				line-height: 1;
+				border-bottom: 1px solid var(--terminal-border);
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--terminal-dark-green);
+				font-family: 'Fira Code', monospace;
 			}
 			.last-updated-on {
 				font-style: italic;
+				color: var(--terminal-green);
+				margin-top: 0.5em;
+			}
+			hr {
+				border: none;
+				border-top: 1px solid var(--terminal-border);
+				margin: 2em 0;
+			}
+			/* Terminal-like metadata */
+			.metadata {
+				background-color: var(--terminal-code-bg);
+				padding: 1em;
+				border-radius: 4px;
+				margin: 1em 0;
+				border: 1px solid var(--terminal-border);
+			}
+			.metadata-item {
+				display: flex;
+				align-items: center;
+				margin-bottom: 0.5em;
+			}
+			.metadata-item:last-child {
+				margin-bottom: 0;
+			}
+			.metadata-label {
+				color: var(--terminal-dark-green);
+				margin-right: 0.5em;
+				font-weight: bold;
+			}
+			.metadata-value {
+				color: var(--terminal-green);
 			}
 		</style>
 	</head>
@@ -65,12 +104,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
+						<div class="metadata">
+							<div class="metadata-item">
+								<span class="metadata-label">Published:</span>
+								<span class="metadata-value"><FormattedDate date={pubDate} /></span>
+							</div>
 							{
 								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+									<div class="metadata-item">
+										<span class="metadata-label">Updated:</span>
+										<span class="metadata-value"><FormattedDate date={updatedDate} /></span>
 									</div>
 								)
 							}
@@ -85,19 +128,26 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 		<script>
 			document.querySelectorAll('pre').forEach(pre => {
-    			const button = document.createElement('button');
-    			button.innerText = 'Copy';
-    			button.style.position = 'absolute';
-    			button.style.right = '1em';
-    			button.style.top = '1em';
-    			button.onclick = () => {
-        			navigator.clipboard.writeText(pre.innerText);
-        			button.innerText = 'Copied!';
-        			setTimeout(() => button.innerText = 'Copy', 2000);
-    		};
-    		pre.style.position = 'relative';
-    		pre.appendChild(button);
-		});
+				const button = document.createElement('button');
+				button.innerText = 'Copy';
+				button.style.position = 'absolute';
+				button.style.right = '1em';
+				button.style.top = '1em';
+				button.style.background = 'var(--terminal-code-bg)';
+				button.style.color = 'var(--terminal-green)';
+				button.style.border = '1px solid var(--terminal-border)';
+				button.style.padding = '0.5em 1em';
+				button.style.borderRadius = '4px';
+				button.style.cursor = 'pointer';
+				button.style.fontFamily = "'Fira Code', monospace";
+				button.onclick = () => {
+					navigator.clipboard.writeText(pre.innerText);
+					button.innerText = 'Copied!';
+					setTimeout(() => button.innerText = 'Copy', 2000);
+				};
+				pre.style.position = 'relative';
+				pre.appendChild(button);
+			});
 		</script>
 	</body>
 </html>
