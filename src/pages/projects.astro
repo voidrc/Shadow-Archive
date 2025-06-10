@@ -3,6 +3,10 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <html lang="en">
@@ -15,21 +19,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<main>
 				<h1>Projects</h1>
 				<div class="projects-grid">
-					<article class="project-card">
-						<h2>Project Name</h2>
-						<p class="project-description">
-							A brief description of the project and its purpose.
-						</p>
-						<div class="project-tech">
-							<span class="tech-tag">Technology 1</span>
-							<span class="tech-tag">Technology 2</span>
-						</div>
-						<div class="project-links">
-							<a href="#" class="project-link">View Source</a>
-							<a href="#" class="project-link">Live Demo</a>
-						</div>
-					</article>
-					<!-- Add more project cards as needed -->
+					{projects.map((project) => (
+						<article class="project-card">
+							{project.data.heroImage && (
+								<img
+									src={project.data.heroImage}
+									alt={project.data.title}
+									class="project-image"
+								/>
+							)}
+							<h2>{project.data.title}</h2>
+							<p class="project-description">{project.data.description}</p>
+							<div class="project-tech">
+								{project.data.technologies.map((tech) => (
+									<span class="tech-tag">{tech}</span>
+								))}
+							</div>
+							<div class="project-links">
+								<a href={project.data.sourceUrl} class="project-link" target="_blank">
+									View Source
+								</a>
+								{project.data.demoUrl && (
+									<a href={project.data.demoUrl} class="project-link" target="_blank">
+										Live Demo
+									</a>
+								)}
+							</div>
+						</article>
+					))}
 				</div>
 			</main>
 			<Footer />
@@ -67,6 +84,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		transform: translateY(-5px);
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 		border-color: var(--terminal-pink);
+	}
+
+	.project-image {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 4px;
+		margin-bottom: 1rem;
 	}
 
 	.project-card h2 {

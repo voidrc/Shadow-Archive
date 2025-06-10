@@ -1,10 +1,11 @@
 ---
-title: "Sample Project"
-description: "A demonstration of how to add projects to the portfolio"
+title: "Project Name"
+description: "Project description"
 date: "2024-03-20"
-technologies: ["Astro", "TypeScript", "TailwindCSS"]
-sourceUrl: "https://github.com/voidrc/sample-project"
-demoUrl: "https://sample-project.voidrc.dev"
+technologies: ["Tech1", "Tech2"]
+sourceUrl: "https://github.com/username/project"
+demoUrl: "https://project-demo.com" # optional
+heroImage: "../../assets/blog-placeholder-1.jpg" # optional
 ---
 
 This is a sample project that demonstrates how to add projects to your portfolio. The project uses Astro, TypeScript, and TailwindCSS to create a modern web application.
