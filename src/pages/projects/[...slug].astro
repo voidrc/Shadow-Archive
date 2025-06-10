@@ -5,12 +5,13 @@ export async function getStaticPaths() {
 	const projects = await getCollection('projects');
 	return projects.map((project) => ({
 		params: { slug: project.slug },
-		props: project,
+		props: { project },
 	}));
 }
 
-const { Content } = Astro.props;
+const { project } = Astro.props;
+const { Content } = await project.render();
 
-<Project {...Astro.props.data}>
+<Project {...project.data}>
 	<Content />
 </Project> 
