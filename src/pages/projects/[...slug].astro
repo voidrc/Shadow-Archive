@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { Content } = await Astro.props;
+const { Content } = Astro.props;
 
 <Project {...Astro.props.data}>
 	<Content />
