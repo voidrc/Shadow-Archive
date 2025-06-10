@@ -110,32 +110,6 @@ h3 {
 h4 {
     font-size: 1.2em;
 }
-/*h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-*/
 
 strong,
 b {
@@ -148,16 +122,12 @@ a {
     border-bottom: 1px dotted var(--terminal-cyan);
     transition: all 0.2s ease;
 }
-/*a {
-	color: var(--accent);
-}*/
 
 a:hover {
     color: var(--terminal-pink);
     border-bottom: 1px solid var(--terminal-pink);
     text-shadow: 0 0 8px rgba(255, 121, 198, 0.3);
 }
-
 
 p {
 	margin-bottom: 1em;
@@ -192,11 +162,6 @@ code {
     font-family: 'Fira Code', monospace;
     border: 1px solid var(--terminal-border);
 }
-/*code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}*/
 
 pre {
     background-color: var(--terminal-current-line);
@@ -208,10 +173,6 @@ pre {
     border: 1px solid var(--terminal-border);
     position: relative;
 }
-/*pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}*/
 pre > code {
 	all: unset;
     border: none;
