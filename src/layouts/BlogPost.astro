@@ -14,6 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -82,5 +83,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
+		<script>
+			document.querySelectorAll('pre').forEach(pre => {
+    			const button = document.createElement('button');
+    			button.innerText = 'Copy';
+    			button.style.position = 'absolute';
+    			button.style.right = '1em';
+    			button.style.top = '1em';
+    			button.onclick = () => {
+        			navigator.clipboard.writeText(pre.innerText);
+        			button.innerText = 'Copied!';
+        			setTimeout(() => button.innerText = 'Copy', 2000);
+    		};
+    		pre.style.position = 'relative';
+    		pre.appendChild(button);
+		});
+		</script>
 	</body>
 </html>

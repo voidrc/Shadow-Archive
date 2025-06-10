@@ -5,6 +5,15 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [mdx(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: 'dracula', // or 'monokai', 'nord'
+    },
+  },
+});
+// https://astro.build/config
+/*export default defineConfig({
 	site: 'https://example.com',
 	integrations: [mdx(), sitemap()],
-});
+});*/
