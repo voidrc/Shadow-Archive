@@ -1,0 +1,127 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Projects | Voidborne Archive" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="text-container">
+			<Header />
+			<main>
+				<h1>Projects</h1>
+				<div class="projects-grid">
+					<article class="project-card">
+						<h2>Project Name</h2>
+						<p class="project-description">
+							A brief description of the project and its purpose.
+						</p>
+						<div class="project-tech">
+							<span class="tech-tag">Technology 1</span>
+							<span class="tech-tag">Technology 2</span>
+						</div>
+						<div class="project-links">
+							<a href="#" class="project-link">View Source</a>
+							<a href="#" class="project-link">Live Demo</a>
+						</div>
+					</article>
+					<!-- Add more project cards as needed -->
+				</div>
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: var(--terminal-foreground);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.project-card {
+		background: var(--terminal-current-line);
+		border: 1px solid var(--terminal-border);
+		border-radius: 8px;
+		padding: 1.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.project-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		border-color: var(--terminal-pink);
+	}
+
+	.project-card h2 {
+		color: var(--terminal-pink);
+		margin: 0 0 1rem 0;
+		font-size: 1.5rem;
+	}
+
+	.project-description {
+		color: var(--terminal-foreground);
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tech-tag {
+		background: var(--terminal-selection);
+		color: var(--terminal-cyan);
+		padding: 0.25rem 0.75rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		font-family: 'Fira Code', monospace;
+	}
+
+	.project-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.project-link {
+		color: var(--terminal-green);
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: all 0.2s ease;
+	}
+
+	.project-link:hover {
+		color: var(--terminal-pink);
+		text-shadow: 0 0 8px rgba(255, 121, 198, 0.3);
+	}
+
+	@media (max-width: 720px) {
+		main {
+			padding: 1rem;
+			width: 100%;
+		}
+
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style> 
