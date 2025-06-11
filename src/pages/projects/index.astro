@@ -1,0 +1,103 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const projects = (await getCollection('projects')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Projects | " + SITE_TITLE description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: 960px;
+				margin: 0 auto;
+				padding: 2rem 0;
+			}
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				gap: 2rem;
+				padding: 0;
+				list-style: none;
+			}
+			.project-card {
+				background: rgb(var(--white));
+				border-radius: 12px;
+				overflow: hidden;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: var(--box-shadow);
+			}
+			.project-card a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.project-image {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+			}
+			.project-content {
+				padding: 1.5rem;
+			}
+			.project-title {
+				margin: 0 0 0.5rem 0;
+				color: rgb(var(--black));
+			}
+			.project-description {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.9rem;
+			}
+			@media (max-width: 720px) {
+				main {
+					width: 100%;
+					padding: 1rem;
+				}
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+			<ul class="projects-grid">
+				{
+					projects.map((project) => (
+						<li class="project-card">
+							<a href={`/projects/${project.slug}/`}>
+								{project.data.image && (
+									<Image
+										class="project-image"
+										width={400}
+										height={200}
+										src={project.data.image}
+										alt={project.data.title}
+									/>
+								)}
+								<div class="project-content">
+									<h3 class="project-title">{project.data.title}</h3>
+									<p class="project-description">{project.data.description}</p>
+								</div>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
