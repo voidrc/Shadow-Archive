@@ -7,8 +7,12 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 
+console.log('Starting to fetch projects...');
 const projects = await getCollection('projects');
-console.log('Projects collection:', projects);
+console.log('Raw projects:', projects);
+console.log('Projects length:', projects.length);
+console.log('First project data:', projects[0]?.data);
+
 const sortedProjects = projects.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
