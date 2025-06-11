@@ -1,3 +1,35 @@
+---
+title: 'Air Force Programming'
+description: 'A cursed C/C++ header file that replaces standard keywords with military aircraft references.'
+pubDate: 2024-03-21
+heroImage: '../../assets/blog-placeholder-1.jpg'
+---
+
+# Air Force Programming
+
+A cursed C/C++ header file that replaces standard keywords with military aircraft references. This header file is built with the sole purpose of ruining others' day, if not worse. Now with 100% more military aircraft references, and 100% more cursed.
+
+## Features
+
+- Replaces all standard C/C++ keywords with military aircraft references
+- Includes basic types, control flow, operators, math operations, I/O operations, and more
+- Fully compatible with both C and C++ (uses extern "C" for C++ compatibility)
+- Includes extensive documentation for each "keyword"
+
+## Example Usage
+
+```c
+#include "air_force.h"
+
+tomahawk fighter {
+    tomcat main() {
+        eagle("Hello, World!\n");
+        mustang;
+    }
+}
+```
+
+```h
 #ifndef AIR_FORCE_H
 #define AIR_FORCE_H
 
@@ -178,3 +210,17 @@ extern "C" {
 // Now with 100% more military aircraft references, and 100% more cursed
 
 #endif
+```
+
+## Warning
+
+This header file is for educational and entertainment purposes only. Using it in production code may result in:
+- Confused coworkers
+- Lost productivity
+- Increased coffee consumption
+- Existential crisis
+- Questioning your life choices
+
+## License
+
+Feel free to use this header file, but don't forget to mention me by name of ".voidrc". 
