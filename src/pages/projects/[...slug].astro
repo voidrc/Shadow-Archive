@@ -1,21 +1,56 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import ProjectsPost from '../../layouts/ProjectsPost.astro';
-import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('projects');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: project,
 	}));
 }
-type Props = CollectionEntry<'projects'>;
-
-const post = Astro.props;
-const { Content } = await render(post);
+const { Content } = await Astro.props;
+const { title, description, pubDate, heroImage } = Astro.props.data;
 ---
 
-<ProjectsPost {...post.data}>
-	<Content />
-</ProjectsPost>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: 720px;
+			}
+			img {
+				width: 100%;
+				border-radius: 12px;
+			}
+			.date {
+				color: rgb(var(--gray));
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article>
+				{heroImage && <Image width={720} height={360} src={heroImage} alt="" />}
+				<h1>{title}</h1>
+				<p class="date">
+					<time datetime={pubDate.toISOString()}>
+						{pubDate.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric',
+						})}
+					</time>
+				</p>
+				<Content />
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
