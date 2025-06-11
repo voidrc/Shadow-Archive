@@ -7,9 +7,12 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 
-const projects = (await getCollection('projects')).sort(
+const projects = await getCollection('projects');
+console.log('Projects collection:', projects);
+const sortedProjects = projects.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+console.log('Sorted projects:', sortedProjects);
 ---
 
 <!doctype html>
@@ -92,7 +95,7 @@ const projects = (await getCollection('projects')).sort(
 			<section>
 				<ul>
 					{
-						projects.map((project) => (
+						sortedProjects.map((project) => (
 							<li>
 								<a href={`/projects/${project.id}/`}>
 									{project.data.heroImage && (
