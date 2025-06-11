@@ -8,7 +8,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 
 const projects = (await getCollection('projects')).sort(
-	(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -100,7 +100,7 @@ const projects = (await getCollection('projects')).sort(
 									)}
 									<h4 class="title">{project.data.title}</h4>
 									<p class="date">
-										<FormattedDate date={new Date(project.data.pubDate)} />
+										<FormattedDate date={project.data.pubDate} />
 									</p>
 								</a>
 							</li>
