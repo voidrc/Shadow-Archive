@@ -1,3 +1,4 @@
+---
 import BaseLayout from '../../layouts/ProjectsPost.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -6,6 +7,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 const projects = (await getCollection('projects')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+---
 
 <BaseLayout title="Projects">
   <main>
