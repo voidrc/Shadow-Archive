@@ -1,16 +1,8 @@
 ---
-title: Todd
-date: 2025-05-29
-categories:
-  - Linux
-  - Offensive
-  - Lab
-  - Commands
-  - Remote_Connection
-  - Shell
-  - Privilege_Escalation
-  - NMAP
-  - Net_Cat
+title: 'Todd'
+description: 'How to get flags on Todd machine'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/'
 ---
 
 ## Reconnaissance
