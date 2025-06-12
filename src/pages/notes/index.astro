@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('notes');
+const writeups = await getCollection('writeups');
 
 // Group posts by category (first folder in id)
 const grouped = {};
@@ -19,6 +20,18 @@ for (const post of posts) {
 const sortedCategories = Object.keys(grouped).sort();
 for (const cat of sortedCategories) {
 	grouped[cat].sort((a, b) => a.id.localeCompare(b.id));
+}
+
+// Group writeups by category (first folder in id)
+const writeupsGrouped = {};
+for (const post of writeups) {
+	const [category, ...rest] = post.id.split('/');
+	if (!writeupsGrouped[category]) writeupsGrouped[category] = [];
+	writeupsGrouped[category].push(post);
+}
+const writeupsSortedCategories = Object.keys(writeupsGrouped).sort();
+for (const cat of writeupsSortedCategories) {
+	writeupsGrouped[cat].sort((a, b) => a.id.localeCompare(b.id));
 }
 ---
 
@@ -113,6 +126,22 @@ for (const cat of sortedCategories) {
 								<div>
 									<span class="tree-line">{idx === arr.length - 1 ? '↳' : '↳'}</span>
 									<a class="tree-link" href={`/notes/${post.id}/`}>{post.data.title}</a>
+								</div>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+			<h1>Write-Ups</h1>
+			<div class="tree">
+				{writeupsSortedCategories.map((cat) => (
+					<div class="tree-category-hover">
+						<div class="tree-category">{cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
+						<div class="tree-popup">
+							{writeupsGrouped[cat].map((post, idx, arr) => (
+								<div>
+									<span class="tree-line">{idx === arr.length - 1 ? '↳' : '↳'}</span>
+									<a class="tree-link" href={`/writeups/${post.id}/`}>{post.data.title}</a>
 								</div>
 							))}
 						</div>
