@@ -13,35 +13,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1>❯ Welcome to the Voidborne Archive</h1>
+
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+				This is the personal knowledge base, hacking lab, and digital footprint of <strong>.voidrc</strong> — a cybersecurity student exploring the depths of Red Teaming, malware development, and beyond.
 			</p>
+
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+				You won't find sanitized tutorials or perfect roadmaps here. This archive is raw, evolving, and real — the journey of one hacker documenting everything, from chaotic notes to working exploits, from theory to application.
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
+
+			<p>
+				If you're also lost in the matrix and tired of surface-level content — welcome. This archive was built for you.
+			</p>
+			
+			<h2>❯ What you'll find here:</h2>
 			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+				<li>📝 <a href="/blog">Notes</a> — walkthroughs, insights, reflections</li>
+				<li>🧪 <a href="/projects">Projects</a> — tools, scripts, experiments</li>
+				<li>🎯 HackTheBox & HackMyVM writeups</li>
+			</ul>
+
+			<h2>❯ TODO:</h2>
+			<ul>
+				<li><input type="checkbox" disabled />Notes::Need to sort 150GB of chaos</li>
+				<li><input type="checkbox" disabled />Notes::Networking::Rewrite/Reorginize old ones</li>
+				<li><input type="checkbox" disabled />Notes::Linux::Rewrite/Continue from last checkpoint</li>
+				<li><input type="checkbox" disabled />Notes::Scripting::Start taking notes </li>
+				<li><input type="checkbox" disabled />Write-Ups::Create a page for that</li>
+			</ul>
+
+			<!-- RSS Feed Guide -->
+			<h2>❯ How to use the RSS Feed</h2>
+			<p>
+				You can subscribe to updates for both <strong>Notes</strong> and <strong>Projects</strong> using the site's RSS feed.<br />
+				The RSS feed URL is: <code>https://voidborne-archive.netlify.app/rss.xml</code>
+			</p>
+			<ul>
+				<li>Copy the RSS feed URL above.</li>
+				<li>Paste it into your favorite RSS reader (such as Feedly, NewsBlur, Thunderbird, or any RSS app).</li>
+				<li>You'll automatically get notified when new blog posts or projects are published.</li>
 			</ul>
 			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				<em>What is RSS?</em> RSS (Really Simple Syndication) lets you follow updates from this site in your own reader, so you never miss new content.
 			</p>
 		</main>
 		<Footer />
