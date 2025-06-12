@@ -4,12 +4,22 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getCollection('blog');
+
+// Group posts by category (first folder in id)
+const grouped = {};
+for (const post of posts) {
+	// id example: 'Linux/1) Introduction'
+	const [category, ...rest] = post.id.split('/');
+	if (!grouped[category]) grouped[category] = [];
+	grouped[category].push(post);
+}
+// Optionally, sort categories and posts alphabetically
+const sortedCategories = Object.keys(grouped).sort();
+for (const cat of sortedCategories) {
+	grouped[cat].sort((a, b) => a.id.localeCompare(b.id));
+}
 ---
 
 <!doctype html>
@@ -18,96 +28,63 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 720px;
+				max-width: calc(100% - 2em);
+				margin: auto;
+				padding: 3em 1em;
+				border: 1px solid var(--terminal-border);
+				border-radius: 4px;
+				background-color: rgba(40, 42, 54, 0.3);
+				box-shadow: 0 0 10px rgba(189, 147, 249, 0.1);
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
+			.tree {
+				font-family: 'Fira Code', monospace;
+				font-size: 1.1em;
+				margin: 2em 0;
+				padding-left: 0.5em;
 			}
-			ul li {
-				width: calc(50% - 1rem);
+			.tree-category {
+				color: var(--terminal-purple);
+				font-weight: bold;
+				margin-top: 1.5em;
+				margin-bottom: 0.2em;
+				font-size: 1.2em;
 			}
-			ul li * {
+			.tree-line {
+				color: var(--terminal-green);
+				white-space: pre;
+				display: inline;
+			}
+			.tree-link {
+				color: var(--terminal-cyan);
 				text-decoration: none;
-				transition: 0.2s ease;
+				border-bottom: 1px dotted var(--terminal-cyan);
+				transition: all 0.2s ease;
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
+			.tree-link:hover {
+				color: var(--terminal-pink);
+				border-bottom: 1px solid var(--terminal-pink);
+				text-shadow: 0 0 8px rgba(255, 121, 198, 0.3);
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<h1>Notes Archive</h1>
+			<div class="tree">
+				{sortedCategories.map((cat) => (
+					<div>
+						<div class="tree-category">{cat}</div>
+						{grouped[cat].map((post, idx, arr) => (
+							<div>
+								<span class="tree-line">{idx === arr.length - 1 ? '  └── ' : '  ├── '}</span>
+								<a class="tree-link" href={`/blog/${post.id}/`}>{post.data.title}</a>
+							</div>
+						))}
+					</div>
+				))}
+			</div>
 		</main>
 		<Footer />
 	</body>
