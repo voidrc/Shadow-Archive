@@ -1,9 +1,8 @@
 ---
-title: GPG-101
-date: 2025-05-29
-categories:
-  - To_Sort
-  - Under_Development
+title: 'GPG Enscryption'
+description: 'Setting up, Usage, and commands'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/gpg.jpg'
 ---
 
 ### **Encrypt Like a Shadow**

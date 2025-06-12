@@ -1,11 +1,8 @@
 ---
-title: Wifi Cracking
-date: 2025-05-29
-categories:
-  - Linux
-  - Network
-  - Commands
-  - Offensive
+title: 'WiFi Cracking'
+description: 'How to  broke into wifi network and some usefull tips'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/wifi.png'
 ---
 
 ## **1. Understanding Wi-Fi Security Protocols**

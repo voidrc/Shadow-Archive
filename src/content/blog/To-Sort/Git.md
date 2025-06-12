@@ -1,9 +1,8 @@
 ---
-title: Git Notes
-date: 2025-05-29
-categories:
-  - To_Sort
-  - Under_Development
+title: 'Git'
+description: 'List of Git commands'
+pubDate: 'Jun 19 2024'
+heroImage: '../../assets/git.png'
 ---
 
 ## 🔍 Compare Branches

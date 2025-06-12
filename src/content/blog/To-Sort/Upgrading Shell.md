@@ -1,9 +1,8 @@
 ---
-title: NetCat to Full TTY
-date: 2025-05-29
-categories:
-  - To_Sort
-  - Under_Development
+title: 'Upgrading TTY'
+description: 'From simple tty to functional Shell'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/reverse_shell.png'
 ---
 
 Every pentester knows that amazing feeling when they catch a reverse shell with netcat and see that oh-so-satisfying verbose netcat message followed by output from `id`.
