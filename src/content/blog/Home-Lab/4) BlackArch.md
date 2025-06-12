@@ -1,8 +1,8 @@
 ---
-title: BlackArch
-date: 2025-05-29
-categories:
-  - Lab
+title: 'BlackArch'
+description: 'Everything about Dark Side of Arch.'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/blackarch.jpg'
 ---
 
 BlackArch Linux is an [Arch Linux](http://www.archlinux.org/)-based penetration testing distribution for penetration testers and security researchers. The repository contains [2845](https://www.blackarch.org/tools.html) tools.

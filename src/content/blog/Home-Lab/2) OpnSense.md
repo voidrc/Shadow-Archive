@@ -1,8 +1,8 @@
 ---
-title: OpnSense
-date: 2025-05-29
-categories:
-  - Lab
+title: 'OpnSense'
+description: 'Setting-Up firewall, router, and IDS'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/opnsense.jpg'
 ---
 
 ## Why OPNsense?

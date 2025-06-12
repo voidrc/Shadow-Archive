@@ -1,8 +1,8 @@
 ---
-title: Fedora Server
-date: 2025-05-29
-categories:
-  - Lab
+title: 'Fedora Server'
+description: 'We need this for stable party hosting'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/fedora.jpg'
 ---
 
 Not all targets—like **DVWA (Damn Vulnerable Web App)**—come with an ISO. Instead, they need to be deployed using **Docker** or other containerization platforms.
