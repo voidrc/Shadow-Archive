@@ -1,9 +1,8 @@
 ---
-title: TimeShift
-date: 2025-05-29
-categories:
-  - Linux
-  - Back_Up
+title: 'Time-Shift'
+description: 'System back-up and recovery'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/snapshot.jpg'
 ---
 
 ## 🧩 STEP 1: Install Timeshift

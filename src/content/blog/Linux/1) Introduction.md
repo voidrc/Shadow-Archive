@@ -1,10 +1,10 @@
 ---
-title: Introduction
-date: 2025-05-30
-order: 1
-categories:
-  - Linux
+title: 'Introduction'
+description: 'First steps toward Freedom'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/linux.png'
 ---
+
 Linux, as you might already know, is an operating system used for personal computers, servers, and even mobile devices. However, Linux stands as a fundamental pillar in cybersecurity, renowned for its robustness, flexibility, and open-source nature. In this section we are going to cover the essential knowledge for any cybersecurity professional. You can think of this as your first driving lesson for a new car, getting a basic understanding of the vehicle, what it consists of, and why it is the way it currently is.
 
 To begin, let's define what Linux is. Linux is an operating system, just like Windows, macOS, iOS, or Android. An operating system (OS) is software that manages all the hardware resources of a computer, facilitating communication between software applications and hardware components. Unlike some other operating systems, Linux comes in many different distributions—often called "distros"—which are versions of Linux tailored to various needs and preferences.

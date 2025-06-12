@@ -1,9 +1,8 @@
 ---
-title: Separating $HOME
-date: 2025-05-29
-categories:
-  - Linux
-  - Partition
+title: 'Partitioning'
+description: 'How to separate `/home` from rest of system?'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/partition.png'
 ---
 
 ## Step 1: Mount the 1TB SSD

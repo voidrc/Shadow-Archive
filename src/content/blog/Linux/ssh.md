@@ -1,9 +1,8 @@
 ---
-title: SSH
-date: 2025-05-29
-categories:
-  - Linux
-  - Remote_Connection
+title: 'SSH'
+description: 'How to use SSH service properly'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/ssh.png'
 ---
 
 ### On Each Lab PC

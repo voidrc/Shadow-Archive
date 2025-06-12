@@ -1,11 +1,10 @@
 ---
-title: The Shell
-date: 2025-05-30
-order: 2
-categories:
-  - Linux
-  - Shell
+title: 'Shell'
+description: 'Shell types, differences, and other'
+pubDate: 'June 12 2025'
+heroImage: '../../assets/shelll.jpg'
 ---
+
 The bash prompt is simple to understand. By default, it shows information like your username (who you are), your computer's name (hostname), and the folder/directory you're currently working in. It's a line of text that appears on the screen to let you know the system is ready for you. The prompt appears on a new line, and the cursor (the blinking line or box) is placed right after it, waiting for you to type a command.
 
 It can be customized to provide useful information to the user. The format can look something like this:
