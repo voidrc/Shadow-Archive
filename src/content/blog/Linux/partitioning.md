@@ -2,7 +2,7 @@
 title: 'Partitioning'
 description: 'How to separate `/home` from rest of system?'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/partition.png'
+heroImage: '../../../assets/partition.png'
 ---
 
 ## Step 1: Mount the 1TB SSD

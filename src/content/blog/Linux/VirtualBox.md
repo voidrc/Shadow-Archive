@@ -2,7 +2,7 @@
 title: 'VirtualBox'
 description: 'Guide to properly install VirtualBox into Arch'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/virtualbox.jpg'
+heroImage: '../../../assets/virtualbox.jpg'
 ---
 
 ## **1. Install Required Packages**

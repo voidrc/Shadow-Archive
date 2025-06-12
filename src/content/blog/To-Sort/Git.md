@@ -2,7 +2,7 @@
 title: 'Git'
 description: 'List of Git commands'
 pubDate: 'Jun 19 2024'
-heroImage: '../../assets/git.png'
+heroImage: '../../../assets/git.png'
 ---
 
 ## 🔍 Compare Branches
