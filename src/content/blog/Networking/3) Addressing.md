@@ -1,8 +1,7 @@
 ---
-title: Addressing
-date: 2025-05-29
-categories:
-  - Network
+title: 'Addressing'
+description: 'IPv4/6, MAC addresses, Subnets'
+pubDate: 'June 12 2025'
 ---
 
 ## Network Layer

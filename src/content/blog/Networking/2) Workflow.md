@@ -1,8 +1,7 @@
 ---
-title: Networking Workflow
-date: 2025-05-29
-categories:
-  - Network
+title: 'Workflow'
+description: 'All about models'
+pubDate: 'June 12 2025'
 ---
 
 ## Networking Models

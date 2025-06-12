@@ -1,8 +1,7 @@
 ---
-title: Network Structure
-date: 2025-05-29
-categories:
-  - Network
+title: 'Network Structure'
+description: 'Network types, connections, typologies,....'
+pubDate: 'June 12 2025'
 ---
 
 ## **1. What Is a Network?**

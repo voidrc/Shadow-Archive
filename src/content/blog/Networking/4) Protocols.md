@@ -1,8 +1,7 @@
 ---
-title: Protocols & Terminology
-date: 2025-05-29
-categories:
-  - Network
+title: 'Terminology'
+description: 'Protocols, Ports, ......'
+pubDate: 'June 12 2025'
 ---
 
 ## Networking Key Terminology

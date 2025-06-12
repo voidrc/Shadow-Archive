@@ -1,8 +1,7 @@
 ---
-title: Connection Establishment
-date: 2025-05-29
-categories:
-  - Network
+title: 'Connection Establishment'
+description: 'All about network connections'
+pubDate: 'June 12 2025'
 ---
 
 ## Key Exchange Mechanisms
