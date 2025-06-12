@@ -3,12 +3,12 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-	const posts = await getCollection('blog');
+	const notes = await getCollection('notes');
 	const projects = await getCollection('projects');
 	const allItems = [
-		...posts.map((post) => ({
+		...notes.map((post) => ({
 			...post.data,
-			link: `/blog/${post.id}/`,
+			link: `/notes/${post.id}/`,
 			pubDate: post.data.pubDate,
 		})),
 		...projects.map((project) => ({
