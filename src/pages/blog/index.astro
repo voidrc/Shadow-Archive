@@ -78,7 +78,7 @@ for (const cat of sortedCategories) {
 						<div class="tree-category">{cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
 						{grouped[cat].map((post, idx, arr) => (
 							<div>
-								<span class="tree-line">{idx === arr.length - 1 ? '  └ ' : '  ├ '}</span>
+								<span class="tree-line">{idx === arr.length - 1 ? ' └> ' : ' ├> '}</span>
 								<a class="tree-link" href={`/blog/${post.id}/`}>{post.data.title}</a>
 							</div>
 						))}
