@@ -71,11 +71,11 @@ for (const cat of sortedCategories) {
 	<body>
 		<Header />
 		<main>
-			<h1>Notes Archive</h1>
+			<h1>Notes</h1>
 			<div class="tree">
 				{sortedCategories.map((cat) => (
 					<div>
-						<div class="tree-category">{cat}</div>
+						<div class="tree-category">{cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
 						{grouped[cat].map((post, idx, arr) => (
 							<div>
 								<span class="tree-line">{idx === arr.length - 1 ? '  └── ' : '  ├── '}</span>
