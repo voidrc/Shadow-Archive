@@ -28,14 +28,9 @@ for (const post of posts) {
 }
 
 // Sort categories based on custom order
-const sortedCategories = Object.keys(grouped).sort((a, b) => {
-	const indexA = categoryOrder.indexOf(a);
-	const indexB = categoryOrder.indexOf(b);
-	// If category is not in the order list, put it at the end
-	if (indexA === -1) return 1;
-	if (indexB === -1) return -1;
-	return indexA - indexB;
-});
+const sortedCategories = categoryOrder.filter(cat => grouped[cat]).concat(
+	Object.keys(grouped).filter(cat => !categoryOrder.includes(cat))
+);
 
 for (const cat of sortedCategories) {
 	grouped[cat].sort((a, b) => a.id.localeCompare(b.id));
@@ -50,14 +45,9 @@ for (const post of writeups) {
 }
 
 // Sort writeup categories based on custom order
-const writeupsSortedCategories = Object.keys(writeupsGrouped).sort((a, b) => {
-	const indexA = categoryOrder.indexOf(a);
-	const indexB = categoryOrder.indexOf(b);
-	// If category is not in the order list, put it at the end
-	if (indexA === -1) return 1;
-	if (indexB === -1) return -1;
-	return indexA - indexB;
-});
+const writeupsSortedCategories = categoryOrder.filter(cat => writeupsGrouped[cat]).concat(
+	Object.keys(writeupsGrouped).filter(cat => !categoryOrder.includes(cat))
+);
 
 for (const cat of writeupsSortedCategories) {
 	writeupsGrouped[cat].sort((a, b) => a.id.localeCompare(b.id));
