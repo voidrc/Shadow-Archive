@@ -14,8 +14,8 @@ Welcome to the **source code** of [shadowlab.dev](https://shadowlab.dev) (or whe
 /  
 ├── public/          # Static files (favicons, fonts, etc.)  
 ├── src/  
-│   ├── content/     # All content in markdown
-│   │   ├── assets/  # Header Images 
+│   ├── assets/      # Header Images 
+│   ├── content/     # All content in markdown 
 │   │   ├── notes/   # General knowledge, concepts, and rants  
 │   │   ├── writeups/# CTFs, labs, targets conquered or broken  
 │   │   └── projects/# Code, tools, weird experiments  
