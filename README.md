@@ -1,11 +1,11 @@
 # 🕸️ .voidrc's Shadow Archive
 
-Welcome to the **source code** of [shadowlab.dev](https://shadowlab.dev) (or wherever your Netlify domain points). This is the **personal knowledge base**, **write-up vault**, and **hacking laboratory** of `.voidrc` — a cybersecurity student spelunking through Red Teaming, malware dev, system internals, and whatever else seems dangerous and fun.
+Welcome to the **source code** of [Shadow-Archive](https://shadow-archive.netlify.app/) This is the **personal knowledge base**, **write-up vault**, and **hacking laboratory** of `.voidrc` — a cybersecurity student spelunking through Red Teaming, malware dev, system internals, and whatever else seems dangerous and fun.
 
 ## 📦 Built With
 
 - **[Astro](https://astro.build/)** – Static site generator for those who want speed, structure, and minimal JavaScript cult vibes.
-- **Markdown** – For easy, readable notes, because `.voidrc` has things to say and prefers plain text rebellion.
+- **Markdown** – For easy, readable notes.
 - **Netlify** – Continuous deployment tied to this GitHub repo like a lifeline to the void.
 
 ## 🧠 Structure
@@ -37,7 +37,7 @@ Yes — *but read this like it's written in blood.*
 If you've got notes, write-ups, or interesting cyber nonsense, feel free to PR. Just:
 - Keep it original (no copy-pasta from other blogs)
 - Credit sources if you're referencing tools or research
-- Markdown only — `.voidrc` hates bloated formats
+- Markdown only — Archive hates bloated formats
 
 > ⚠️ This is not a platform for SEO garbage, clickbait, or generic tech tips. This is a digital fortress of curiosity, malice, and markdown.
 
@@ -66,9 +66,3 @@ This site is their shadow — part lab notebook, part trap, part archive.
 ## 🧨 License
 
 MIT — because the source is open, but the secrets are hidden.
-
----
-
-## 💳 Credit
-
-This blog is based off of the lovely [Astro](https://docs.astro.build/en/getting-started/).
