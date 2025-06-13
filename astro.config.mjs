@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://voidborne-archive.netlify.app',
+  site: 'https://shadow-archive.netlify.app',
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
