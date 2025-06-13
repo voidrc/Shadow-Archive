@@ -2,7 +2,7 @@
 title: 'Arch'
 description: 'Answer to: "How can you flex your skills with friends?"'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/arch.png'
+heroImage: '../../../assets/arch.png'
 ---
 
 Arch Linux is the ultimate choice for **ricing** due to its minimal, **DIY approach**, allowing complete control over system customization. With a **rolling-release model**, Arch provides **cutting-edge software** and access to the **AUR (Arch User Repository)**, making it perfect for installing and tweaking custom themes, window managers, and system utilities. Its **lightweight nature** ensures that only the components you need are installed, keeping your system **clean, fast, and efficient**—a dream setup for any ricer.

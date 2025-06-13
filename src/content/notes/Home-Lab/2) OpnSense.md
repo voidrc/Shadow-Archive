@@ -2,7 +2,7 @@
 title: 'OpnSense'
 description: 'Setting-Up firewall, router, and IDS'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/opnsense.jpg'
+heroImage: '../../../assets/opnsense.jpg'
 ---
 
 ## Why OPNsense?

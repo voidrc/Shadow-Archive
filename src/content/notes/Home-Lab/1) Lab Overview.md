@@ -2,7 +2,7 @@
 title: 'Lab Overview'
 description: 'Layout of Lab'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/lab_overview.webp'
+heroImage: '../../../assets/lab_overview.webp'
 ---
 
 ## **Lab Purpose**

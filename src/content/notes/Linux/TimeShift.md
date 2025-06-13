@@ -2,7 +2,7 @@
 title: 'Time-Shift'
 description: 'System back-up and recovery'
 pubDate: 'June 12 2025'
-heroImage: '../../assets/snapshot.jpg'
+heroImage: '../../../assets/snapshot.jpg'
 ---
 
 ## 🧩 STEP 1: Install Timeshift
