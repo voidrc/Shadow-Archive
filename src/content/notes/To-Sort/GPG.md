@@ -2,7 +2,7 @@
 title: 'GPG Enscryption'
 description: 'Setting up, Usage, and commands'
 pubDate: 'June 12 2025'
-heroImage: '../../../assets/gpg.jpg'
+heroImage: '../../assets/gpg.jpg'
 ---
 
 ### **Encrypt Like a Shadow**

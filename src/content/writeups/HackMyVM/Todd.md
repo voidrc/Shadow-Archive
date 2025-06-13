@@ -2,7 +2,7 @@
 title: 'Todd'
 description: 'How to get flags on Todd machine'
 pubDate: 'June 12 2025'
-heroImage: '../../../assets/commands.png'
+heroImage: '../../assets/commands.png'
 ---
 
 ## Reconnaissance

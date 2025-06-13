@@ -2,7 +2,7 @@
 title: 'Introduction'
 description: 'First steps toward Freedom'
 pubDate: 'June 12 2025'
-heroImage: '../../../assets/linux.png'
+heroImage: '../../assets/linux.png'
 ---
 
 Linux, as you might already know, is an operating system used for personal computers, servers, and even mobile devices. However, Linux stands as a fundamental pillar in cybersecurity, renowned for its robustness, flexibility, and open-source nature. In this section we are going to cover the essential knowledge for any cybersecurity professional. You can think of this as your first driving lesson for a new car, getting a basic understanding of the vehicle, what it consists of, and why it is the way it currently is.

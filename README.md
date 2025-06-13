@@ -1,68 +1,74 @@
-# Astro Starter Kit: Notes
+# 🕸️ .voidrc's Shadow Archive
 
-```sh
-npm create astro@latest -- --template notes
+Welcome to the **source code** of [shadowlab.dev](https://shadowlab.dev) (or wherever your Netlify domain points). This is the **personal knowledge base**, **write-up vault**, and **hacking laboratory** of `.voidrc` — a cybersecurity student spelunking through Red Teaming, malware dev, system internals, and whatever else seems dangerous and fun.
+
+## 📦 Built With
+
+- **[Astro](https://astro.build/)** – Static site generator for those who want speed, structure, and minimal JavaScript cult vibes.
+- **Markdown** – For easy, readable notes, because `.voidrc` has things to say and prefers plain text rebellion.
+- **Netlify** – Continuous deployment tied to this GitHub repo like a lifeline to the void.
+
+## 🧠 Structure
+
+```
+/  
+├── public/          # Static files (favicons, fonts, etc.)  
+├── src/  
+│   ├── content/     # All content in markdown
+│   │   ├── assets/  # Header Images 
+│   │   ├── notes/   # General knowledge, concepts, and rants  
+│   │   ├── writeups/# CTFs, labs, targets conquered or broken  
+│   │   └── projects/# Code, tools, weird experiments  
+│   ├── layouts/     # Page layouts and templates
+│   ├── pages/       # Astro pages and routes
+│   ├── styles/      # Global styles and CSS
+│   ├── components/  # Astro & UI components
+│   ├── content.config.ts # Content configuration
+│   ├── consts.ts    # Global constants
+│   └── env.d.ts     # TypeScript environment declarations
+├── astro.config.mjs # Astro configuration
+└── tsconfig.json    # TypeScript configuration
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## 📤 Contributions?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Yes — *but read this like it's written in blood.*
 
-![notes](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+If you've got notes, write-ups, or interesting cyber nonsense, feel free to PR. Just:
+- Keep it original (no copy-pasta from other blogs)
+- Credit sources if you're referencing tools or research
+- Markdown only — `.voidrc` hates bloated formats
 
-Features:
+> ⚠️ This is not a platform for SEO garbage, clickbait, or generic tech tips. This is a digital fortress of curiosity, malice, and markdown.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## 🧪 Local Setup
 
-## 🚀 Project Structure
+If you're deranged enough to run this locally:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+git clone https://github.com/voidrc/shadow-archive.git
+cd shadow-archive
+npm install
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Visit `http://localhost:4321` to enter the void.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🕶️ Who Dis?
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection('notes')` to retrieve posts from `src/content/notes/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+`.voidrc` is a cybersecurity student, red teamer-in-progress, and malware mechanic.  
+This site is their shadow — part lab notebook, part trap, part archive.
 
-Any static assets, like images, can be placed in the `public/` directory.
+> _"The internet forgets nothing. So I wrote everything down."_
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🧨 License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+MIT — because the source is open, but the secrets are hidden.
 
-## 👀 Want to learn more?
+---
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 💳 Credit
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This blog is based off of the lovely [Astro](https://docs.astro.build/en/getting-started/).

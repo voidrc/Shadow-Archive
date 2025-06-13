@@ -12,13 +12,39 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# IDE and editor files
 .idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# System Files
+Thumbs.db
+.directory
+desktop.ini
+
+# Cache directories
+.cache/
+.temp/
+.tmp/
+
+# Coverage directory
+coverage/
+
+# Debug files
+.debug/
+
+# Local Netlify folder
+.netlify/

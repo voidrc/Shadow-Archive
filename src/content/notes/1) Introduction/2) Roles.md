@@ -2,7 +2,7 @@
 title: Security Roles
 description: Detailed breakdown of Cyber Security Roles
 pubDate: June 14 2025
-heroImage: ../../../assets/roles.png
+heroImage: ../../assets/roles.png
 ---
 
 > *"Paving the Path to Cyber Excellence"*

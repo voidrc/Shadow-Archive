@@ -2,7 +2,7 @@
 title: 'WiFi Cracking'
 description: 'How to  broke into wifi network and some usefull tips'
 pubDate: 'June 12 2025'
-heroImage: '../../../assets/wifi.png'
+heroImage: '../../assets/wifi.png'
 ---
 
 ## **1. Understanding Wi-Fi Security Protocols**
