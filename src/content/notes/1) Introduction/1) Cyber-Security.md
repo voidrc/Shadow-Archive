@@ -2,7 +2,7 @@
 title: Getting Started
 description: How to become Ethical Hacker?
 pubDate: June 14 2025
-heroImage: ../../../assets/
+heroImage: ../../../assets/getting_started.jpg
 ---
 
 > *"Hacking is an art, practised through a creative mind"*
