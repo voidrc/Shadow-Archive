@@ -1,7 +1,8 @@
 ---
-title: Getting Started
-description: How to become Ethical Hacker?
-pubDate: June 14 2025
+title: Introduction
+description: Introduction to the topic
+category: Introduction
+pubDate: 2024-03-20
 heroImage: ../../../assets/getting_started.jpg
 ---
 
@@ -26,12 +27,12 @@ Cybersecurity is **the practice of protecting systems, networks, programs, and d
 Before diving into tools and technologies, ask yourself:
 
 1. **Why do you want to do this?**  
-    Are you curious? Do you want to build or break systems? Is protecting people’s data something you value?
+    Are you curious? Do you want to build or break systems? Is protecting people's data something you value?
     
 2. **Understand the Need**  
     Cyber threats are growing. Data breaches, ransomware, nation-state attacks—cybersecurity isn't optional anymore. It's critical.
     
-3. **It’s Not Easy**  
+3. **It's Not Easy**  
     This path demands time, dedication, and constant learning. Tools change. Threats evolve. Your mindset must adapt.
     
 4. **Know Your Interest**  
@@ -131,7 +132,7 @@ Certifications help demonstrate credibility. A few tracks:
 
 ---
 
-## 🧠 Hacker’s Mindset
+## 🧠 Hacker's Mindset
 
 - Learn deeply, not just broadly.
     
@@ -157,7 +158,7 @@ Certifications help demonstrate credibility. A few tracks:
 - **Humility**
     
 
-> 🧩 The best hackers aren’t just technically skilled—they’re **strategic thinkers and lifelong learners.**
+> 🧩 The best hackers aren't just technically skilled—they're **strategic thinkers and lifelong learners.**
 
 ---
 

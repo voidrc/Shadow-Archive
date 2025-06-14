@@ -2,6 +2,7 @@
 title: 'Addressing'
 description: 'IPv4/6, MAC addresses, Subnets'
 pubDate: 'June 12 2025'
+category: 'Networking'
 ---
 
 ## Network Layer
@@ -20,7 +21,7 @@ Each **OSI** layer uses specific protocols—sets of rules that govern communica
 - RIP
 - OSPF    
 
-Its role is to ensure packet delivery from source to destination across or within subnets, even if they use different or incompatible addressing methods. This involves routing data through the entire network, with routers forwarding packets node by node, often assigning them new intermediate targets. These forwarded packets don’t reach higher OSI layers.
+Its role is to ensure packet delivery from source to destination across or within subnets, even if they use different or incompatible addressing methods. This involves routing data through the entire network, with routers forwarding packets node by node, often assigning them new intermediate targets. These forwarded packets don't reach higher OSI layers.
 
 ---
 
@@ -35,7 +36,7 @@ IPv4 / IPv6 - like the street address and neighborhood of the recipient.
 MAC - like the specific apartment number.
 ```
 
-An IP address can be used to reach one device (unicast), multiple devices (broadcast), or be assigned to a single device that responds to multiple addresses. It’s crucial that each IP address is unique within its network.
+An IP address can be used to reach one device (unicast), multiple devices (broadcast), or be assigned to a single device that responds to multiple addresses. It's crucial that each IP address is unique within its network.
 
 ### IPv4 Structure
 
@@ -90,7 +91,7 @@ Given:
 - Subnet Mask: 255.255.255.192
 - CIDR: /26    
 
-We analyze binary forms to identify the **network** and **host** parts. The subnet mask’s 1-bits fix the network portion. Remaining bits allow for host addressing.
+We analyze binary forms to identify the **network** and **host** parts. The subnet mask's 1-bits fix the network portion. Remaining bits allow for host addressing.
 
 If:
 - Network Address: 192.168.12.128

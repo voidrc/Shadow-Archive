@@ -1,6 +1,7 @@
 ---
-title: 'Network Structure'
-description: 'Network types, connections, typologies,....'
+title: Network Structure
+description: Network types, connections, typologies,....
+category: Networking
 pubDate: 'June 12 2025'
 ---
 

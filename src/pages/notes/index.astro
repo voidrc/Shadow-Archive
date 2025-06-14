@@ -8,30 +8,16 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('notes');
 const writeups = await getCollection('writeups');
 
-// Define custom category order
-const categoryOrder = [
-	'Introduction',	
-	'Networking',
-	'Linux',
-	'Home-Lab',
-	'Scripting',
-	'Offensive'
-];
-
 // Group posts by category (first folder in id)
 const grouped = {};
 for (const post of posts) {
-	// id example: 'Linux/1) Introduction'
-	const [category, ...rest] = post.id.split('/');
+	// Use the category from frontmatter if available, otherwise use the folder name
+	const category = post.data.category || post.id.split('/')[0].replace(/^\d+[._-]/, '');
 	if (!grouped[category]) grouped[category] = [];
 	grouped[category].push(post);
 }
-
-// Sort categories based on custom order
-const sortedCategories = categoryOrder.filter(cat => grouped[cat]).concat(
-	Object.keys(grouped).filter(cat => !categoryOrder.includes(cat))
-);
-
+// Optionally, sort categories and posts alphabetically
+const sortedCategories = Object.keys(grouped).sort();
 for (const cat of sortedCategories) {
 	grouped[cat].sort((a, b) => a.id.localeCompare(b.id));
 }
@@ -43,12 +29,7 @@ for (const post of writeups) {
 	if (!writeupsGrouped[category]) writeupsGrouped[category] = [];
 	writeupsGrouped[category].push(post);
 }
-
-// Sort writeup categories based on custom order
-const writeupsSortedCategories = categoryOrder.filter(cat => writeupsGrouped[cat]).concat(
-	Object.keys(writeupsGrouped).filter(cat => !categoryOrder.includes(cat))
-);
-
+const writeupsSortedCategories = Object.keys(writeupsGrouped).sort();
 for (const cat of writeupsSortedCategories) {
 	writeupsGrouped[cat].sort((a, b) => a.id.localeCompare(b.id));
 }

@@ -1,6 +1,7 @@
 ---
 title: Security Roles
 description: Detailed breakdown of Cyber Security Roles
+category: Introduction
 pubDate: June 14 2025
 heroImage: ../../../assets/roles.png
 ---

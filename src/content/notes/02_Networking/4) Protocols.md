@@ -1,7 +1,8 @@
 ---
-title: 'Terminology'
-description: 'Protocols, Ports, ......'
+title: 'Protocols'
+description: 'Network protocols and their functions'
 pubDate: 'June 12 2025'
+category: 'Networking'
 ---
 
 ## Networking Key Terminology

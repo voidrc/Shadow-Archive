@@ -1,7 +1,8 @@
 ---
-title: 'Connection Establishment'
-description: 'All about network connections'
+title: 'Connections'
+description: 'Network connections and their types'
 pubDate: 'June 12 2025'
+category: 'Networking'
 ---
 
 ## Key Exchange Mechanisms
