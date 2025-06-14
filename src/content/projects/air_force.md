@@ -206,7 +206,7 @@ extern "C" {
 }
 #endif
 
-// This header file is built by ".voidrc" with sole purpose of ruining others' DAY, if not worse
+// This header file is built by ".voidrc" with sole purpose of ruining others' DAY, if not worse...
 // Now with 100% more military aircraft references, and 100% more cursed
 
 #endif
