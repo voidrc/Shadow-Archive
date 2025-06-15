@@ -1,7 +1,7 @@
 ---
 title: Red Team Tips
-description: A walk through the madness of building structure from entropy.
-category: Folder Name
+description: Tips for Lawfull Villians
+category: Introduction
 pubDate: 2025-06-15
 heroImage: ../../../assets/teams.png
 ---
