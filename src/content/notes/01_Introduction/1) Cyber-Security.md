@@ -106,10 +106,9 @@ Certifications help demonstrate credibility. A few tracks:
     
 - **Linux:** RHCSA, RHCE, CompTIA Linux+
     
-- **Security:** CEH, OSCP, eJPT, GSEC, CISSP, GPEN, GWAPT
-    
+- **Security:** CEH, OSCP, eJPT GSEC, CISSP, GPEN, GWAPT
 
-> ⚠️ Remember: Certifications aren't magic bullets. They're proof of understanding, not guarantees of skill.
+> ⚠️ I recommend eJPT(Junior Penetration Tester) & CEH(Certified Ethical Hacker) if you didn't choose which role you wanna go.
 
 ---
 
