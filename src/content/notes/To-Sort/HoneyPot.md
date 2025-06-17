@@ -51,6 +51,7 @@ A **honeypot** is a **deceptive system or service** set up to attract attackers.
 - **Virtualization or cloud platform usage**
 - **Log management (ELK, Splunk, etc. optional)**
 - **Firewall (iptables/nftables)**
+- **T-Pot**
 
 ---
 
