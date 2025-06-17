@@ -64,5 +64,19 @@ IDS: Detect unauthorized access or anomalies and alert administrators
 IPS: Not only detect threats, but also take action to prevent intrusion
 
 ## Controllers
-In Software-Defined Networking(SDN) context, these are central units used to manages flow control to networking devices
+In Software-Defined Networking(SDN) context, these are central units used to manages flow control to networking devices.
+
+## Network-attached Storage(NAS) Devices
+Dedicated file storage system that provides data access to heterogeneous group of clients.
+
+## Storage Area Network(SAN)
+High-Speed network that provides access to consolidated block-level data storage.
+
+## Media
+In networking,, it refers to the physical materials used to transmit data.
+
+## Wide Area Network(WAN) Link
+Used to connect networks over large geographical areas.
+
+--- 
 
