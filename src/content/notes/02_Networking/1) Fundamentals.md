@@ -79,4 +79,59 @@ In networking,, it refers to the physical materials used to transmit data.
 Used to connect networks over large geographical areas.
 
 --- 
+# B) Network Resources
+when we talked about network resources, we need to think about how data moved around the network. And we break them into 2 models: **Client/Server Model** & **Peer-to-Peer Model**.
 
+## Client/Server Model
+Utilizes a dedicated server to provide access to network resources (files, scanners, printers, etc.)
+
+- Easy Administration & Backup
+- Better Scalability
+
+- Costs More
+- Requires Dedicated OS
+- Requires Specialized Skillset
+
+## Peer-to-Peer Model
+Peers or other machines (e.g., laptops, desktops) can share resources together directly.
+
+Example for Peer-to-Peer is torrent.
+
+- Lower Cost
+- No Specialized OS
+- No Dedicated Resources
+
+- Decentralized Management
+- Inefficient for Large  Networks
+- Poor Scalability
+
+---
+
+# C) Network Geography
+We divide networks according to their area of coverage.
+
+## Personal Area Network(PAN/WPAN)
+Smallest type of wired or wireless network which usually covers a distance about 10m or less.
+
+## Local Area Network(LAN/WLAN)
+Connects components in a limited distance, generally up to about 100m.
+
+## Campus Area Network(CAN)
+A building-centric LAN that is spread across numerous buildings in a certain area.
+
+## Metropolitan Area Network(MAN)
+Connects locations that are scattered across the city.
+
+## Wide Area Network(WAN)
+Connects geographically disparate internal networks.
+
+# D) Network Topology
+Refers to the arrangement of different elements like links, nodes, clients, and servers that make up a computer network. It is crucial to know these topologies in order to design decent network infrastructure. And Network topology diagram divided into Physical/Logical Topologies.
+
+### Physical Topology
+Used to show how the network devices and components are physically cabled and connected together.
+
+### Logical  Topology
+Talks about how the traffic is actually going to flow in the network.
+
+## Point-to-Point topology
