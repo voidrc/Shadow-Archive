@@ -1,8 +1,8 @@
 ---
-title: 'Upgrading TTY'
-description: 'From simple tty to functional Shell'
-pubDate: 'June 12 2025'
-heroImage: '../../../assets/reverse_shell.png'
+title: Upgrading TTY
+description: From simple tty to functional Shell
+pubDate: 2025-06-19
+heroImage: ../../../assets/reverse_shell.png
 ---
 
 Every pentester knows that amazing feeling when they catch a reverse shell with netcat and see that oh-so-satisfying verbose netcat message followed by output from `id`.

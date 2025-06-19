@@ -1,8 +1,8 @@
 ---
-title: 'Git'
-description: 'List of Git commands'
-pubDate: 'Jun 19 2024'
-heroImage: '../../../assets/git.png'
+title: Git
+description: List of Git commands
+pubDate: 2025-06-19
+heroImage: ../../../assets/git.png
 ---
 
 ## 🔍 Compare Branches

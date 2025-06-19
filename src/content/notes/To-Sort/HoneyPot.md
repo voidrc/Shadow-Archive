@@ -1,9 +1,9 @@
 ---
 title: HoneyPot
 description: How to create HoneyPot
-category: 
+category: To-Sort
 pubDate: 2025-06-16
-heroImage: ../../../assets/
+heroImage: ../../../assets/to-sort.jpg
 ---
 
 ## Summary

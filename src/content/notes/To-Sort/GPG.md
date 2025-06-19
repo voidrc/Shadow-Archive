@@ -1,8 +1,8 @@
 ---
-title: 'GPG Enscryption'
-description: 'Setting up, Usage, and commands'
-pubDate: 'June 12 2025'
-heroImage: '../../../assets/gpg.jpg'
+title: GPG Enscryption
+description: Setting up, Usage, and commands
+pubDate: 2025-06-19
+heroImage: ../../../assets/gpg.jpg
 ---
 
 ### **Encrypt Like a Shadow**
