@@ -135,3 +135,30 @@ Used to show how the network devices and components are physically cabled and co
 Talks about how the traffic is actually going to flow in the network.
 
 ## Point-to-Point topology
+Simplest form of network topology that involves a direct connection between two devices.
+
+![p2p](../../../assets/P2P.png)
+
+## Ring Topology
+A network configuration where each devices is connected to 2 other devices, forming a circular data path.
+![ring](../../../assets/ring.png)
+
+## Bus Topology
+All of the  network devices are connected to a single central cable, called the bus or backbone.
+![bus](../../../assets/bus.png)
+
+
+## Star Topology
+One of the most common network layouts that is in use today
+![star](../../../assets/star.png)
+
+## Mesh Topology
+Features a point-to-point connection between every single devices on the network to create a robust and redundant network.
+Full Mesh Formula for Number of Connections:
+```bash
+x = n(n-1)/2
+```
+![mesh](../../../assets/mesh.png)
+
+## Tree Topology
+![tree](../../../assets/tree.png)
