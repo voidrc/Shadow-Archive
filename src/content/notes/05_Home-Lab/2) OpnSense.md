@@ -1,7 +1,8 @@
 ---
 title: 'OpnSense'
 description: 'Setting-Up firewall, router, and IDS'
-pubDate: 'June 12 2025'
+category: Home-Lab
+pubDate: 2025-06-19
 heroImage: '../../../assets/opnsense.jpg'
 ---
 

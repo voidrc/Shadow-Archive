@@ -1,7 +1,8 @@
 ---
 title: 'BlackArch'
 description: 'Everything about Dark Side of Arch.'
-pubDate: 'June 12 2025'
+category: Home-Lab
+pubDate: 2025-06-19
 heroImage: '../../../assets/blackarch.jpg'
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 'Arch'
 description: 'Answer to: "How can you flex your skills with friends?"'
-pubDate: 'June 12 2025'
+category: Home-Lab
+pubDate: 2025-06-19
 heroImage: '../../../assets/arch.png'
 ---
 
