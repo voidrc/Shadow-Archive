@@ -8,6 +8,15 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('notes');
 const writeups = await getCollection('writeups');
 
+// Define your custom category order here
+const CATEGORY_ORDER = [
+	'Introduction',
+	'Networking',
+	'Linux',
+	'Offensive',
+	'Home-Lab',
+];
+
 // Group posts by category (first folder in id)
 const grouped = {};
 for (const post of posts) {
@@ -16,8 +25,15 @@ for (const post of posts) {
 	if (!grouped[category]) grouped[category] = [];
 	grouped[category].push(post);
 }
-// Optionally, sort categories and posts alphabetically
-const sortedCategories = Object.keys(grouped).sort();
+// Sort categories by custom order, then alphabetically for any not in the list
+const sortedCategories = Object.keys(grouped).sort((a, b) => {
+	const idxA = CATEGORY_ORDER.indexOf(a);
+	const idxB = CATEGORY_ORDER.indexOf(b);
+	if (idxA === -1 && idxB === -1) return a.localeCompare(b);
+	if (idxA === -1) return 1;
+	if (idxB === -1) return -1;
+	return idxA - idxB;
+});
 for (const cat of sortedCategories) {
 	grouped[cat].sort((a, b) => a.id.localeCompare(b.id));
 }
