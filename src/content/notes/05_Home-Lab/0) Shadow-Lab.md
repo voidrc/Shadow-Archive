@@ -5,7 +5,6 @@ category: Home-Lab
 pubDate: 2025-06-19
 heroImage: ../../../assets/Shadow-Lab.jpg
 ---
-
 ## Ultimate Server
 
 | Components      | Models                                                                        | Extra                                                                                                     |

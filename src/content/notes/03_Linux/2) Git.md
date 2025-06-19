@@ -1,7 +1,7 @@
 ---
 title: Git
 description: List of Git commands
-category: To-Sort
+category: Linux
 pubDate: 2025-06-16
 heroImage: ../../../assets/git.png
 ---

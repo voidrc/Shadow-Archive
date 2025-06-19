@@ -1,7 +1,7 @@
 ---
 title: GPG Enscryption
 description: Setting up, Usage, and commands
-category: To-Sort
+category: Linux
 pubDate: 2025-06-16
 heroImage: ../../../assets/gpg.jpg
 ---
