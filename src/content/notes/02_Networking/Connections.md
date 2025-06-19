@@ -1,8 +1,8 @@
 ---
 title: 'Connections'
 description: 'Network connections and their types'
-pubDate: 'June 12 2025'
-category: 'Networking'
+category: Networking
+pubDate: 2025-06-16
 ---
 
 ## Key Exchange Mechanisms

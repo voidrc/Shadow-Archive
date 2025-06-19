@@ -1,7 +1,8 @@
 ---
 title: GPG Enscryption
 description: Setting up, Usage, and commands
-pubDate: 2025-06-19
+category: To-Sort
+pubDate: 2025-06-16
 heroImage: ../../../assets/gpg.jpg
 ---
 

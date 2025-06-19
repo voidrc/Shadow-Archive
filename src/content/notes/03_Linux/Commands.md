@@ -1,7 +1,8 @@
 ---
 title: 'Commands'
 description: 'List of tools and commands you can find in Linux'
-pubDate: 'June 12 2025'
+category: Linux
+pubDate: 2025-06-16
 heroImage: '../../../assets/commands.png'
 ---
 

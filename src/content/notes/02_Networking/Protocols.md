@@ -1,8 +1,8 @@
 ---
 title: 'Protocols'
 description: 'Network protocols and their functions'
-pubDate: 'June 12 2025'
-category: 'Networking'
+category: Networking
+pubDate: 2025-06-16
 ---
 
 ## Networking Key Terminology
