@@ -60,20 +60,6 @@ body {
     text-align: left;
     font-size: 16px;
 }
-/*body {
-	font-family: 'Atkinson', sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}*/
-
 
 main {
     width: 720px;
@@ -86,11 +72,16 @@ main {
     box-shadow: 0 0 10px rgba(189, 147, 249, 0.1);
 }
 
-h1, h2, h3, h4 {
+h1, h2{
     color: var(--terminal-purple);
     font-family: 'Fira Code', monospace;
     border-bottom: 1px solid var(--terminal-border);
     padding-bottom: 0.3em;
+}
+
+ h3, h4 {
+    color: var(--terminal-purple);
+    font-family: 'Fira Code', monospace;
 }
 
 h1 {

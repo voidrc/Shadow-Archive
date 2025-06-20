@@ -7,7 +7,7 @@ heroImage: ../../../assets/fundamentals.png
 ---
 # A) Network Components
 
-##### Clients
+#### Clients
 Devices that Users access the network with
 
 These can be any device that simply connects network:
@@ -17,7 +17,7 @@ These can be any device that simply connects network:
 - Smartphones
 - Smart TVs
 
-##### Servers
+#### Servers
 Provides  resources to the network
 Common examples:
 - Email Servers
@@ -27,7 +27,7 @@ Common examples:
 
 These servers can be any dedicated hardwares, or within system with help of containerization
 
-##### Hubs 
+#### Hubs 
 Older network devices that connect other devices like clients and servers over a  local area network.
 
 Hubs have limitations such as increased network errors due to their broadcasting nature.
