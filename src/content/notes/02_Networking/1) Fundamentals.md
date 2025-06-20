@@ -1,6 +1,5 @@
 ---
 title: Fundamentals
-description: What's Networking?
 category: Networking
 pubDate: 2025-06-16
 heroImage: ../../../assets/fundamentals.png
