@@ -82,7 +82,6 @@ h1, h2{
  h3, h4 {
     color: var(--terminal-purple);
     font-family: 'Fira Code', monospace;
-    padding-bottom: 0em;
 }
 
 h1 {
