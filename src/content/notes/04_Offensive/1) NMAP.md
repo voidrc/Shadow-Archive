@@ -73,98 +73,103 @@ Nmap is a powerful tool with a variety of features designed for network discover
 
 ## NMAP Commands
 
-| Command                               | Description                                           |
-| ------------------------------------- | ----------------------------------------------------- |
-| nmap {target}                         | Basic Scan                                            |
-| nmap {target1} {target2}              | Multi Target Scan                                     |
-| nmap 192.168.1.1-50                   | Scan a Range of IPs                                   |
-| nmap 192.168.1.0/24                   | Scan Entire Subnet                                    |
-| nmap -p 22,80,443 {target}            | Scan Specific Ports                                   |
-| nmap -p- {target}                     | Scan Entire Ports                                     |
-| nmap -sV {target}                     | Detects Service Version                               |
-| nmap -O {target}                      | Detect Operating System                               |
-| nmap -sT {target}                     | Performs TCP connect scan                             |
-| nmap -sS {target}                     | Performs SYN scan                                     |
-| nmap -sU {target}                     | Performs UDP scan                                     |
-| nmap -A {target}                      | Aggressive Scan                                       |
-| nmap -Pn {target}                     | Treat all hosts as online -- skip host discovery      |
-| nmap -sL {target}                     | List targets without scanning                         |
-| nmap -sn {target}                     | Perform ping scan if hosts are alive                  |
-| nmap -sN {target}                     | Perform a Null scan                                   |
-| nmap -sF {target}                     | Perform FIN scan                                      |
-| nmap -sX {target}                     | Perform an Xmas scan                                  |
-| nmap -PE {target}                     | Use ICMP echo requests for host discovery             |
-| nmap -PR {target}                     | Use ARP requests for host discovery on local networks |
-| nmap -sW {target}                     | Perform TCP Window scan                               |
-| nmap -sM {target}                     | Perform TCP maimon scan                               |
-| nmap -sZ {target}                     | Perform SCTP INIT scan                                |
-|                                       |                                                       |
-|                                       |                                                       |
-| nmap -oN output.txt                   | Normal Output                                         |
-| nmap -oX output.xml                   | XML Output                                            |
-| nmap -oG output.gnmap                 | Grepable Output                                       |
-| nmap --append-output                  | Append scan results to an existing output file        |
-| nmap --top-ports {number}             | Scans most common ports                               |
-| nmap -6 {target}                      | Performs IPv6 scan                                    |
-| nmap -T4 {target}                     | Adjust Scan Speed                                     |
-| nmap --version-all                    | Perform detailed version detection                    |
-| nmap --traceroute {target}            | Perform traceroute to determine the route             |
-| nmap --max-retries {num}              | Set maximum retries for probe attempts                |
-| nmap --scan-delay {time}              | Set delay between packets during a scan               |
-| nmap --data-length {length}           | Adjust packet data length for probes                  |
-| nmap --ttl {value}                    | Set TTL (Time-To-Live) value for packets              |
-| nmap -D {decoys} {target}             | Use decoys to hide the dource of the scan             |
-| nmap  --spoof-mac {MAC address}       | Spoof= the MAC address of the scanning machine        |
-| nmap --exclude {target}               | Exclude specific targets from the scan                |
-| nmap --exclude-file {file}            | Exclude targets listed in a file                      |
-| nmap --reason                         | Show reason for host or port state changes            |
-| nmap --badsum {target}                | Send packets with invalid checksums                   |
-| nmap --randomize-hosts {target}       | Randomize the order of the hosts scanned              |
-| nmap --min-hostgroup {number}         | Set Minimum number of hosts in a scan group           |
-| nmap --max-hostgroup {number}         | Set Maximum number of hosts in a scan group           |
-| nmap --min-parallelism {number}       | Set MInimum number of parallel scans                  |
-| nmap --max-parallelism {number}       | Set Maximum number of parallel scans                  |
-| nmap --unprivileged                   | Run Nmap in unprivileged mode                         |
-| nmap --send-ip                        | Use raw IP packets instead of higher-level protocols  |
-| nmap --disable-arp-ping               | Disable ARP ping during host discovery                |
-| nmap --ip-options {options}           | Use specific IP options in packets                    |
-|                                       |                                                       |
-|                                       |                                                       |
-| nmap --sript vuln {target}            | Run vulnerability detection scripts                   |
-| nmap --script {script}                | Run a specific script                                 |
-| nmap -sC {target}                     | Run default category scripts                          |
-| nmap --script-timeout {time}          | Set time out for scripts                              |
-| nmap --script=http-* {target}         | Run HTTP-related scripts                              |
-| nmap --script=ftp-anon {target}       | Check for anonymous FTP login                         |
-| nmap --script=dns-cache-snoop         | Check DNS cache snooping vulnerabilities              |
-| nmap --script=http-stored-xss         | Check for stored XSS vulnerabilties                   |
-| nmap --script=ssl-enum-ciphers        | Check SSL/TLS cipher suites                           |
-| nmap --script=http-robots.txt         | Retrieve and analyze robots.txt files                 |
-| nmap --script=http-sitemap-generator  | Generate sitemaps for web applications                |
-| nmap --script=http-waf-detect         | Detect Web Application Firewalls                      |
-| nmap --script=smb-vuln-ms08-067       | Check for SMB vulnerabilties like MS08-067            |
-| nmap --script=http-sql-injection      | Detect SQL injection vulnerabilities                  |
-| nmap --script=http-userdir-enum       | Enumerate user directories on HTTP servers            |
-| nmap --script=http-shellshock         | Check for Shellshock vulnerabilities                  |
-| nmap --script=mysql-empty-password    | Check for empty password vulnerabilities in MySQL     |
-| nmap --script=http-vuln-cve-2020-3452 | Check for specific CVE vulnerability                  |
-| nmap --script=ssh-auth-methods        | Enumerate support SSH authentication methods          |
-| nmap --script=firewalk                | Analyze firewall rules                                |
-| nmap --script=rdp-enum-encryption     | Enumerate RDP encryption settings                     |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
-|                                       |                                                       |
+| Command                               | Description                                                  |
+| ------------------------------------- | ------------------------------------------------------------ |
+| nmap {target}                         | Basic Scan                                                   |
+| nmap {target1} {target2}              | Multi Target Scan                                            |
+| nmap 192.168.1.1-50                   | Scan a Range of IPs                                          |
+| nmap 192.168.1.0/24                   | Scan Entire Subnet                                           |
+| nmap -p 22,80,443 {target}            | Scan Specific Ports                                          |
+| nmap -p- {target}                     | Scan Entire Ports                                            |
+| nmap -sV {target}                     | Detects Service Version                                      |
+| nmap -O {target}                      | Detect Operating System                                      |
+| nmap -sT {target}                     | Performs TCP connect scan                                    |
+| nmap -sS {target}                     | Performs SYN scan                                            |
+| nmap -sU {target}                     | Performs UDP scan                                            |
+| nmap -A {target}                      | Aggressive Scan                                              |
+| nmap -Pn {target}                     | Treat all hosts as online -- skip host discovery             |
+| nmap -sL {target}                     | List targets without scanning                                |
+| nmap -sn {target}                     | Perform ping scan if hosts are alive                         |
+| nmap -sN {target}                     | Perform a Null scan                                          |
+| nmap -sF {target}                     | Perform FIN scan                                             |
+| nmap -sX {target}                     | Perform an Xmas scan                                         |
+| nmap -PE {target}                     | Use ICMP echo requests for host discovery                    |
+| nmap -PR {target}                     | Use ARP requests for host discovery on local networks        |
+| nmap -sW {target}                     | Perform TCP Window scan                                      |
+| nmap -sM {target}                     | Perform TCP maimon scan                                      |
+| nmap -sZ {target}                     | Perform SCTP INIT scan                                       |
+| nmap -oN output.txt                   | Normal Output                                                |
+| nmap -oX output.xml                   | XML Output                                                   |
+| nmap -oG output.gnmap                 | Grepable Output                                              |
+| nmap --append-output                  | Append scan results to an existing output file               |
+| nmap --top-ports {number}             | Scans most common ports                                      |
+| nmap -6 {target}                      | Performs IPv6 scan                                           |
+| nmap -T4 {target}                     | Adjust Scan Speed                                            |
+| nmap --version-all                    | Perform detailed version detection                           |
+| nmap --traceroute {target}            | Perform traceroute to determine the route                    |
+| nmap --max-retries {num}              | Set maximum retries for probe attempts                       |
+| nmap --scan-delay {time}              | Set delay between packets during a scan                      |
+| nmap --data-length {length}           | Adjust packet data length for probes                         |
+| nmap --ttl {value}                    | Set TTL (Time-To-Live) value for packets                     |
+| nmap -D {decoys} {target}             | Use decoys to hide the dource of the scan                    |
+| nmap  --spoof-mac {MAC address}       | Spoof= the MAC address of the scanning machine               |
+| nmap --exclude {target}               | Exclude specific targets from the scan                       |
+| nmap --exclude-file {file}            | Exclude targets listed in a file                             |
+| nmap --reason                         | Show reason for host or port state changes                   |
+| nmap --badsum {target}                | Send packets with invalid checksums                          |
+| nmap --randomize-hosts {target}       | Randomize the order of the hosts scanned                     |
+| nmap --min-hostgroup {number}         | Set Minimum number of hosts in a scan group                  |
+| nmap --max-hostgroup {number}         | Set Maximum number of hosts in a scan group                  |
+| nmap --min-parallelism {number}       | Set MInimum number of parallel scans                         |
+| nmap --max-parallelism {number}       | Set Maximum number of parallel scans                         |
+| nmap --unprivileged                   | Run Nmap in unprivileged mode                                |
+| nmap --send-ip                        | Use raw IP packets instead of higher-level protocols         |
+| nmap --disable-arp-ping               | Disable ARP ping during host discovery                       |
+| nmap --ip-options {options}           | Use specific IP options in packets                           |
+| nmap --dns-servers {servers}          | Specify custom DNS servers for scans                         |
+| nmap --resolve-all                    | Resolve all IPs before scanning                              |
+| nmap --sript vuln {target}            | Run vulnerability detection scripts                          |
+| nmap --script {script}                | Run a specific script                                        |
+| nmap -sC {target}                     | Run default category scripts                                 |
+| nmap --script-timeout {time}          | Set time out for scripts                                     |
+| nmap --script=http-* {target}         | Run HTTP-related scripts                                     |
+| nmap --script=ftp-anon {target}       | Check for anonymous FTP login                                |
+| nmap --script=dns-cache-snoop         | Check DNS cache snooping vulnerabilities                     |
+| nmap --script=http-stored-xss         | Check for stored XSS vulnerabilties                          |
+| nmap --script=ssl-enum-ciphers        | Check SSL/TLS cipher suites                                  |
+| nmap --script=http-robots.txt         | Retrieve and analyze robots.txt files                        |
+| nmap --script=http-sitemap-generator  | Generate sitemaps for web applications                       |
+| nmap --script=http-waf-detect         | Detect Web Application Firewalls                             |
+| nmap --script=smb-vuln-ms08-067       | Check for SMB vulnerabilties like MS08-067                   |
+| nmap --script=http-sql-injection      | Detect SQL injection vulnerabilities                         |
+| nmap --script=http-userdir-enum       | Enumerate user directories on HTTP servers                   |
+| nmap --script=http-shellshock         | Check for Shellshock vulnerabilities                         |
+| nmap --script=mysql-empty-password    | Check for empty password vulnerabilities in MySQL            |
+| nmap --script=http-vuln-cve-2020-3452 | Check for specific CVE vulnerability                         |
+| nmap --script=ssh-auth-methods        | Enumerate support SSH authentication methods                 |
+| nmap --script=firewalk                | Analyze firewall rules                                       |
+| nmap --script=rdp-enum-encryption     | Enumerate RDP encryption settings                            |
+| nmap --script=smb-enum-shares         | List SMB shared resources                                    |
+| nmap --script=smb-enum-users          | Enumerate users on SMB systems                               |
+| nmap --script=imap-capabilities       | Check capabilities of an IMAP server                         |
+| nmap --script=pop3-capabilities       | Check capabilities of a POP3 server                          |
+| nmap --script=http-auth               | Test HTTP authentication  methods                            |
+| nmap --script=ssl-heartbleed          | Test for Heartbleed vulnerabilities in SSL/TLS               |
+| nmap --script=ftp-bounce              | Check for FTP bounce vulnerability                           |
+| nmap --script=ldap-rootdse            | Query LDAP RootDSE information                               |
+| nmap --script=rdp-vuln-ms12-020       | Test for MS12-020 vulnerability in RDP                       |
+| nmap --script=ntp-monlist             | Retrieve the list of recent connection from a NTP server     |
+| nmap --script=snmp-brute              | Perform brute-force attacks on SNMP                          |
+| nmap --script=ip-geolocation-*        | Retrieve geolocation data for scanned IP addresses           |
+| nmap --script=dns-recursion           | Test if a DNS server allows recursion                        |
+| nmap --script=dns-zone-transfer       | Test for DNS zone transfer vulnerabilities                   |
+| nmap --script=dns-service-discovery   | Discover services running on DNS                             |
+| nmap --script=tls-nextprotoneg        | Test Next Protocol Negotiation in TLS                        |
+| nmap --script=ssl-cert-introspection  | Analyze SSL certificates in-depth                            |
+| nmap --script=ntp-info                | Gather information about NTP servers                         |
+| nmap --script=http-grep               | Search for specific patterns in HTTP responses               |
+| nmap --script=smtp-commands           | Enumerate SMTP commands supported by a server                |
+| nmap --script=vnc-info                | Gather information about VNC services                        |
+| nmap --script=ftp-proftpd-backdoor    | Check for ProFTPD backdoor vulnerability                     |
+| nmap --osscan-limit                   | Limit OS detection to promising targets                      |
+| nmap --osscan-guess                   | Guess the operating system when detection is<br>inconclusive |
