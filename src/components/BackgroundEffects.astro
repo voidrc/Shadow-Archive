@@ -1,0 +1,114 @@
+---
+// This component is for CSS-only background effects.
+---
+
+<div class="background-effects">
+    <!-- Floating Symbols -->
+    <div class="floating-symbol s1">01</div>
+    <div class="floating-symbol s2">10</div>
+    <div class="floating-symbol s3">{'<'}</div>
+    <div class="floating-symbol s4">{'>'}</div>
+    
+    <!-- Corners -->
+    <div class="corner c-tl"></div>
+    <div class="corner c-tr"></div>
+    <div class="corner c-bl"></div>
+    <div class="corner c-br"></div>
+</div>
+<style>
+    .background-effects {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -10;
+        pointer-events: none;
+    }
+
+    /* Matrix Rain Effect */
+    .background-effects::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            linear-gradient(90deg, transparent 98%, var(--terminal-green) 100%),
+            linear-gradient(180deg, transparent 98%, var(--terminal-green) 100%);
+        background-size: 50px 50px;
+        opacity: 0.1;
+        z-index: -2;
+        animation: matrix-rain 20s linear infinite;
+    }
+
+    /* Scan Line Effect */
+    .background-effects::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--terminal-green) 50%, 
+            transparent 100%);
+        opacity: 0.3;
+        z-index: -1;
+        animation: scan-line 8s linear infinite;
+    }
+
+    /* Corner Decorations */
+    .corner {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        z-index: 1000;
+        animation: corner-glow 3s ease-in-out infinite;
+    }
+    .c-tl {
+        top: 20px;
+        left: 20px;
+        border-top: 3px solid var(--terminal-green);
+        border-left: 3px solid var(--terminal-green);
+    }
+    .c-tr {
+        top: 20px;
+        right: 20px;
+        border-top: 3px solid var(--terminal-purple);
+        border-right: 3px solid var(--terminal-purple);
+        animation-delay: 1.5s;
+    }
+    .c-bl {
+        bottom: 20px;
+        left: 20px;
+        border-bottom: 3px solid var(--terminal-cyan);
+        border-left: 3px solid var(--terminal-cyan);
+        animation-delay: 0.75s;
+    }
+    .c-br {
+        bottom: 20px;
+        right: 20px;
+        border-bottom: 3px solid var(--terminal-pink);
+        border-right: 3px solid var(--terminal-pink);
+        animation-delay: 2.25s;
+    }
+
+    /* Floating Hacker Symbols */
+    .floating-symbol {
+        position: fixed;
+        color: var(--terminal-green);
+        font-family: 'Fira Code', monospace;
+        font-size: 1.5em;
+        opacity: 0; /* start hidden */
+        z-index: -1;
+        animation: float 10s ease-in-out infinite;
+        text-shadow: 0 0 5px;
+    }
+    .s1 { top: 10%; left: 5%; font-size: 1.5em; color: var(--terminal-green); animation-duration: 6s; }
+    .s2 { top: 20%; right: 10%; font-size: 1.2em; color: var(--terminal-purple); animation-duration: 8s; animation-delay: 2s; }
+    .s3 { top: 80%; left: 15%; font-size: 1.8em; color: var(--terminal-cyan); animation-duration: 7s; animation-delay: 1s;}
+    .s4 { top: 60%; right: 20%; font-size: 1.4em; color: var(--terminal-pink); animation-duration: 9s; animation-delay: 3s;}
+</style> 

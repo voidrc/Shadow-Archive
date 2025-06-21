@@ -45,8 +45,8 @@
 
 /* Floating Symbols */
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+    10%, 90% { transform: translateY(-20px) rotate(10deg); opacity: 0.8; }
 }
 
 /* Gradient Border Animation */
@@ -96,40 +96,6 @@
 	font-display: swap;
 }
 
-/* Background Matrix Rain Effect */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(90deg, transparent 98%, var(--terminal-green) 100%),
-        linear-gradient(180deg, transparent 98%, var(--terminal-green) 100%);
-    background-size: 50px 50px;
-    opacity: 0.1;
-    z-index: -2;
-    animation: matrix-rain 20s linear infinite;
-}
-
-/* Scan Line Effect */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--terminal-green) 50%, 
-        transparent 100%);
-    opacity: 0.3;
-    z-index: -1;
-    animation: scan-line 8s linear infinite;
-}
-
 body {
     background-color: var(--terminal-bg);
     color: var(--terminal-foreground);
@@ -143,88 +109,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Corner Decorations */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    border-top: 3px solid var(--terminal-green);
-    border-left: 3px solid var(--terminal-green);
-    z-index: 1000;
-    animation: corner-glow 3s ease-in-out infinite;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-top: 3px solid var(--terminal-purple);
-    border-right: 3px solid var(--terminal-purple);
-    z-index: 1000;
-    animation: corner-glow 3s ease-in-out infinite 1.5s;
-}
-
-/* Bottom Left Corner */
-main::before {
-    content: '';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    border-bottom: 3px solid var(--terminal-cyan);
-    border-left: 3px solid var(--terminal-cyan);
-    z-index: 1000;
-    animation: corner-glow 3s ease-in-out infinite 0.75s;
-}
-
-/* Bottom Right Corner */
-main::after {
-    content: '';
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    border-bottom: 3px solid var(--terminal-pink);
-    border-right: 3px solid var(--terminal-pink);
-    z-index: 1000;
-    animation: corner-glow 3s ease-in-out infinite 2.25s;
-}
-
-/* Floating Hacker Symbols */
-body::before {
-    content: '01';
-    position: fixed;
-    top: 10%;
-    left: 5%;
-    color: var(--terminal-green);
-    font-family: 'Fira Code', monospace;
-    font-size: 1.5em;
-    opacity: 0.3;
-    z-index: -1;
-    animation: float 6s ease-in-out infinite;
-}
-
-body::after {
-    content: '10';
-    position: fixed;
-    top: 20%;
-    right: 10%;
-    color: var(--terminal-purple);
-    font-family: 'Fira Code', monospace;
-    font-size: 1.2em;
-    opacity: 0.3;
-    z-index: -1;
-    animation: float 8s ease-in-out infinite 2s;
-}
-
 main {
     width: 720px;
     max-width: calc(100% - 2em);
@@ -233,37 +117,15 @@ main {
     border: 2px solid transparent;
     border-radius: 8px;
     background: 
-        linear-gradient(45deg, var(--terminal-bg), var(--terminal-current-line)),
-        linear-gradient(45deg, var(--terminal-purple), var(--terminal-cyan), var(--terminal-green), var(--terminal-pink), var(--terminal-purple));
+        linear-gradient(var(--terminal-bg), var(--terminal-bg)) padding-box,
+        linear-gradient(45deg, var(--terminal-purple), var(--terminal-cyan), var(--terminal-green), var(--terminal-pink), var(--terminal-purple)) border-box;
     background-size: 100% 100%, 200% 200%;
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
     box-shadow: 
         0 0 20px rgba(189, 147, 249, 0.2),
         0 0 40px rgba(139, 233, 253, 0.1),
         inset 0 0 20px rgba(40, 42, 54, 0.5);
     position: relative;
     animation: gradient-border 8s ease infinite;
-}
-
-/* Enhanced Main Content Border */
-main::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-        var(--terminal-purple), 
-        var(--terminal-cyan), 
-        var(--terminal-green), 
-        var(--terminal-pink), 
-        var(--terminal-purple));
-    background-size: 400% 400%;
-    border-radius: 10px;
-    z-index: -1;
-    animation: gradient-border 6s ease infinite;
 }
 
 h1, h2{
@@ -640,11 +502,7 @@ td:hover {
         font-size: 14px;
     }
     
-    /* Disable heavy animations on mobile */
-    body::before,
-    body::after,
-    main::before,
-    main::after {
+    .background-effects {
         display: none;
     }
     

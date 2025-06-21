@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BackgroundEffects from '../components/BackgroundEffects.astro';
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+		<BackgroundEffects />
 		<Header />
 		<main>
 			<h1>❯ Welcome to the Shadow Archive</h1>

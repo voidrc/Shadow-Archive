@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
+import BackgroundEffects from '../../components/BackgroundEffects.astro';
 
 const posts = await getCollection('notes');
 const writeups = await getCollection('writeups');
@@ -130,6 +131,7 @@ for (const cat of writeupsSortedCategories) {
 		</style>
 	</head>
 	<body>
+		<BackgroundEffects />
 		<Header />
 		<main>
 			<h1>Notes</h1>
