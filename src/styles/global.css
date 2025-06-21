@@ -348,33 +348,34 @@ body {
 }
 
 main {
-    width: 720px;
-    max-width: calc(100% - 2em);
-    margin: auto;
-    padding: 3em 1em;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 2em;
     border: 1px solid var(--terminal-border);
-    border-radius: 4px;
+    border-radius: 8px;
     background: linear-gradient(
         135deg,
-        rgba(40, 42, 54, 0.9) 0%,
-        rgba(40, 42, 54, 0.7) 100%
+        rgba(40, 42, 54, 0.95) 0%,
+        rgba(40, 42, 54, 0.85) 100%
     );
     box-shadow: 
-        0 0 20px rgba(189, 147, 249, 0.2),
-        0 0 40px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+        0 0 30px rgba(189, 147, 249, 0.3),
+        0 0 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
     position: relative;
     z-index: 2;
+    min-height: calc(100vh - 4em);
 }
 
 main::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
     background: linear-gradient(
         45deg,
         var(--terminal-purple),
@@ -384,10 +385,10 @@ main::before {
         var(--terminal-purple)
     );
     background-size: 400% 400%;
-    border-radius: 6px;
+    border-radius: 11px;
     z-index: -1;
     animation: matrix-rain 4s ease infinite;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 h1, h2{
@@ -557,8 +558,10 @@ th {
         font-size: 14px;
     }
     main {
+        width: 95%;
+        margin: 1em auto;
         padding: 1em;
-        width: calc(100% - 1em);
+        min-height: calc(100vh - 2em);
     }
     h1 {
         font-size: 2em;
@@ -568,6 +571,38 @@ th {
     }
     h3 {
         font-size: 1.2em;
+    }
+    
+    /* Hide some decorations on mobile for performance */
+    .hacker-symbols,
+    .scan-line,
+    .circuit-pattern {
+        display: none;
+    }
+    
+    .corner-decoration {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .corner-decoration.top-left {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .corner-decoration.top-right {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .corner-decoration.bottom-left {
+        bottom: 10px;
+        left: 10px;
+    }
+    
+    .corner-decoration.bottom-right {
+        bottom: 10px;
+        right: 10px;
     }
 }
 
@@ -843,58 +878,6 @@ button:hover {
     border-radius: 4px;
 }
 
-/* Enhanced Mobile Responsiveness */
-@media (max-width: 720px) {
-    body {
-        font-size: 14px;
-    }
-    main {
-        padding: 1em;
-        width: calc(100% - 1em);
-    }
-    h1 {
-        font-size: 2em;
-    }
-    h2 {
-        font-size: 1.5em;
-    }
-    h3 {
-        font-size: 1.2em;
-    }
-    
-    /* Hide some decorations on mobile for performance */
-    .hacker-symbols,
-    .scan-line,
-    .circuit-pattern {
-        display: none;
-    }
-    
-    .corner-decoration {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .corner-decoration.top-left {
-        top: 10px;
-        left: 10px;
-    }
-    
-    .corner-decoration.top-right {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .corner-decoration.bottom-left {
-        bottom: 10px;
-        left: 10px;
-    }
-    
-    .corner-decoration.bottom-right {
-        bottom: 10px;
-        right: 10px;
-    }
-}
-
 /* Performance optimizations */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -911,4 +894,13 @@ button:hover {
         --terminal-foreground: #ffffff;
         --terminal-bg: #000000;
     }
+}
+
+/* Fix for layout-specific main containers */
+.prose {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    color: var(--terminal-foreground);
 }

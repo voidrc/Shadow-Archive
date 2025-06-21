@@ -18,7 +18,11 @@ const projects = (await getCollection('projects')).sort(
 		<BaseHead title={SITE_TITLE + ' | Projects'} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 90%;
+				max-width: 1200px;
+				margin: 2em auto;
+				padding: 2em;
+				background-color: transparent;
 			}
 			ul {
 				display: flex;
@@ -30,6 +34,16 @@ const projects = (await getCollection('projects')).sort(
 			}
 			ul li {
 				width: calc(50% - 1rem);
+				background: rgba(68, 71, 90, 0.3);
+				border: 1px solid var(--terminal-border);
+				border-radius: 8px;
+				padding: 1rem;
+				transition: all 0.3s ease;
+			}
+			ul li:hover {
+				background: rgba(68, 71, 90, 0.5);
+				box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
+				transform: translateY(-2px);
 			}
 			ul li * {
 				text-decoration: none;
@@ -42,36 +56,44 @@ const projects = (await getCollection('projects')).sort(
 			}
 			ul li:first-child img {
 				width: 100%;
+				max-width: 800px;
 			}
 			ul li:first-child .title {
 				font-size: 2.369rem;
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 12px;
+				border-radius: 8px;
+				width: 100%;
+				height: auto;
 			}
 			ul li a {
 				display: block;
 			}
 			.title {
 				margin: 0;
-				color: rgb(var(--black));
+				color: var(--terminal-purple);
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: var(--terminal-comment);
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: var(--terminal-cyan);
 			}
 			ul a:hover img {
-				box-shadow: var(--box-shadow);
+				box-shadow: 0 0 15px rgba(189, 147, 249, 0.4);
 			}
 			@media (max-width: 720px) {
+				main {
+					width: 95%;
+					margin: 1em auto;
+					padding: 1em;
+				}
 				ul {
-					gap: 0.5em;
+					gap: 1rem;
 				}
 				ul li {
 					width: 100%;
@@ -99,25 +121,26 @@ const projects = (await getCollection('projects')).sort(
 		<Header />
 		<main>
 			<h1>❯ Projects</h1>
-			<section>
-				<ul>
-					{
-						projects.map((project) => (
-							<li>
-								<a href={`/projects/${project.id}/`}>
-									{project.data.heroImage && (
-										<Image width={400} height={200} src={project.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{project.data.title}</h4>
-									<time class="date">
-										<FormattedDate date={project.data.pubDate} />
-									</time>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<ul>
+				{projects.map((project) => (
+					<li>
+						<a href={`/projects/${project.id}/`}>
+							{project.data.heroImage && (
+								<Image
+									width={400}
+									height={200}
+									src={project.data.heroImage}
+									alt=""
+								/>
+							)}
+							<h4 class="title">{project.data.title}</h4>
+							<time class="date">
+								<FormattedDate date={project.data.pubDate} />
+							</time>
+						</a>
+					</li>
+				))}
+			</ul>
 		</main>
 		<Footer />
 	</body>
