@@ -8,12 +8,12 @@
     <div class="floating-symbol s2">10</div>
     <div class="floating-symbol s3">{'<'}</div>
     <div class="floating-symbol s4">{'>'}</div>
-    
-    <!-- Corners -->
-    <div class="corner c-tl"></div>
-    <div class="corner c-tr"></div>
-    <div class="corner c-bl"></div>
-    <div class="corner c-br"></div>
+    <div class="floating-symbol s5">{}</div>
+    <div class="floating-symbol s6">#</div>
+    <div class="floating-symbol s7">;</div>
+    <div class="floating-symbol s8">()</div>
+    <div class="floating-symbol s9">+=</div>
+    <div class="floating-symbol s10">~</div>
 </div>
 <style>
     .background-effects {
@@ -60,42 +60,6 @@
         animation: scan-line 8s linear infinite;
     }
 
-    /* Corner Decorations */
-    .corner {
-        position: fixed;
-        width: 50px;
-        height: 50px;
-        z-index: 1000;
-        animation: corner-glow 3s ease-in-out infinite;
-    }
-    .c-tl {
-        top: 20px;
-        left: 20px;
-        border-top: 3px solid var(--terminal-green);
-        border-left: 3px solid var(--terminal-green);
-    }
-    .c-tr {
-        top: 20px;
-        right: 20px;
-        border-top: 3px solid var(--terminal-purple);
-        border-right: 3px solid var(--terminal-purple);
-        animation-delay: 1.5s;
-    }
-    .c-bl {
-        bottom: 20px;
-        left: 20px;
-        border-bottom: 3px solid var(--terminal-cyan);
-        border-left: 3px solid var(--terminal-cyan);
-        animation-delay: 0.75s;
-    }
-    .c-br {
-        bottom: 20px;
-        right: 20px;
-        border-bottom: 3px solid var(--terminal-pink);
-        border-right: 3px solid var(--terminal-pink);
-        animation-delay: 2.25s;
-    }
-
     /* Floating Hacker Symbols */
     .floating-symbol {
         position: fixed;
@@ -111,4 +75,10 @@
     .s2 { top: 20%; right: 10%; font-size: 1.2em; color: var(--terminal-purple); animation-duration: 8s; animation-delay: 2s; }
     .s3 { top: 80%; left: 15%; font-size: 1.8em; color: var(--terminal-cyan); animation-duration: 7s; animation-delay: 1s;}
     .s4 { top: 60%; right: 20%; font-size: 1.4em; color: var(--terminal-pink); animation-duration: 9s; animation-delay: 3s;}
+    .s5 { top: 30%; left: 30%; font-size: 1.3em; color: var(--terminal-yellow); animation-duration: 10s; animation-delay: 0.5s; }
+    .s6 { top: 50%; left: 50%; font-size: 1.6em; color: var(--terminal-orange); animation-duration: 12s; animation-delay: 4s; }
+    .s7 { top: 90%; right: 5%; font-size: 1.1em; color: var(--terminal-red); animation-duration: 5s; animation-delay: 1.5s; }
+    .s8 { top: 40%; left: 60%; font-size: 1.7em; color: var(--terminal-green); animation-duration: 11s; animation-delay: 5s; }
+    .s9 { top: 70%; left: 80%; font-size: 1.0em; color: var(--terminal-purple); animation-duration: 13s; animation-delay: 2.5s; }
+    .s10 { top: 5%; right: 40%; font-size: 1.9em; color: var(--terminal-cyan); animation-duration: 15s; animation-delay: 6s; }
 </style> 

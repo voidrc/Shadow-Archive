@@ -31,10 +31,8 @@
 
 /* Matrix Rain Effect */
 @keyframes matrix-rain {
-    0% { transform: translateY(-100vh); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+    from { background-position: 0 0; }
+    to { background-position: 0 -1000px; }
 }
 
 /* Scan Line Effect */
