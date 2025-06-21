@@ -18,11 +18,7 @@ const projects = (await getCollection('projects')).sort(
 		<BaseHead title={SITE_TITLE + ' | Projects'} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 90%;
-				max-width: 1200px;
-				margin: 2em auto;
-				padding: 2em;
-				background-color: transparent;
+				width: 960px;
 			}
 			ul {
 				display: flex;
@@ -34,16 +30,6 @@ const projects = (await getCollection('projects')).sort(
 			}
 			ul li {
 				width: calc(50% - 1rem);
-				background: rgba(68, 71, 90, 0.3);
-				border: 1px solid var(--terminal-border);
-				border-radius: 8px;
-				padding: 1rem;
-				transition: all 0.3s ease;
-			}
-			ul li:hover {
-				background: rgba(68, 71, 90, 0.5);
-				box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
-				transform: translateY(-2px);
 			}
 			ul li * {
 				text-decoration: none;
@@ -56,44 +42,36 @@ const projects = (await getCollection('projects')).sort(
 			}
 			ul li:first-child img {
 				width: 100%;
-				max-width: 800px;
 			}
 			ul li:first-child .title {
 				font-size: 2.369rem;
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
-				border-radius: 8px;
-				width: 100%;
-				height: auto;
+				border-radius: 12px;
 			}
 			ul li a {
 				display: block;
 			}
 			.title {
 				margin: 0;
-				color: var(--terminal-purple);
+				color: rgb(var(--black));
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: var(--terminal-comment);
+				color: rgb(var(--gray));
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {
-				color: var(--terminal-cyan);
+				color: rgb(var(--accent));
 			}
 			ul a:hover img {
-				box-shadow: 0 0 15px rgba(189, 147, 249, 0.4);
+				box-shadow: var(--box-shadow);
 			}
 			@media (max-width: 720px) {
-				main {
-					width: 95%;
-					margin: 1em auto;
-					padding: 1em;
-				}
 				ul {
-					gap: 1rem;
+					gap: 0.5em;
 				}
 				ul li {
 					width: 100%;
@@ -109,38 +87,28 @@ const projects = (await getCollection('projects')).sort(
 		</style>
 	</head>
 	<body>
-		<!-- Background Decorations -->
-		<div class="hacker-symbols"></div>
-		<div class="scan-line"></div>
-		<div class="circuit-pattern"></div>
-		<div class="corner-decoration top-left"></div>
-		<div class="corner-decoration top-right"></div>
-		<div class="corner-decoration bottom-left"></div>
-		<div class="corner-decoration bottom-right"></div>
-		
 		<Header />
 		<main>
-			<h1>❯ Projects</h1>
-			<ul>
-				{projects.map((project) => (
-					<li>
-						<a href={`/projects/${project.id}/`}>
-							{project.data.heroImage && (
-								<Image
-									width={400}
-									height={200}
-									src={project.data.heroImage}
-									alt=""
-								/>
-							)}
-							<h4 class="title">{project.data.title}</h4>
-							<time class="date">
-								<FormattedDate date={project.data.pubDate} />
-							</time>
-						</a>
-					</li>
-				))}
-			</ul>
+			<h1>Projects</h1>
+			<section>
+				<ul>
+					{
+						projects.map((project) => (
+							<li>
+								<a href={`/projects/${project.id}/`}>
+									{project.data.heroImage && (
+										<Image width={720} height={360} src={project.data.heroImage} alt="" />
+									)}
+									<h4 class="title">{project.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={project.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
 		</main>
 		<Footer />
 	</body>

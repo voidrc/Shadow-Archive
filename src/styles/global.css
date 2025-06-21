@@ -31,87 +31,47 @@
 
 /* Matrix Rain Effect */
 @keyframes matrix-rain {
-    0% {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
+    0% { transform: translateY(-100vh); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
 }
 
-/* Glitch Effect */
-@keyframes glitch {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        transform: translate(-2px, -2px);
-    }
-    60% {
-        transform: translate(2px, 2px);
-    }
-    80% {
-        transform: translate(2px, -2px);
-    }
-    100% {
-        transform: translate(0);
-    }
+/* Scan Line Effect */
+@keyframes scan-line {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Floating Symbols */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+}
+
+/* Gradient Border Animation */
+@keyframes gradient-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px var(--terminal-purple); }
+    50% { box-shadow: 0 0 20px var(--terminal-purple), 0 0 30px var(--terminal-purple); }
 }
 
 /* Pulse Effect */
 @keyframes pulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05);
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* Scan Line Effect */
-@keyframes scanline {
-    0% {
-        transform: translateY(-100vh);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
-}
-
-/* Floating Particles */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-        transform: translateY(-20px) rotate(120deg);
-    }
-    66% {
-        transform: translateY(10px) rotate(240deg);
-    }
-}
-
-/* Circuit Pattern */
-@keyframes circuit {
-    0% {
-        stroke-dashoffset: 1000;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
+/* Corner Decoration Animation */
+@keyframes corner-glow {
+    0%, 100% { box-shadow: 0 0 10px var(--terminal-green); }
+    50% { box-shadow: 0 0 20px var(--terminal-green), 0 0 30px var(--terminal-green); }
 }
 
 @font-face {
@@ -136,7 +96,7 @@
 	font-display: swap;
 }
 
-/* Background Decorations */
+/* Background Matrix Rain Effect */
 body::before {
     content: '';
     position: fixed;
@@ -145,194 +105,29 @@ body::before {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(189, 147, 249, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(139, 233, 253, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255, 121, 198, 0.05) 0%, transparent 50%);
-    pointer-events: none;
+        linear-gradient(90deg, transparent 98%, var(--terminal-green) 100%),
+        linear-gradient(180deg, transparent 98%, var(--terminal-green) 100%);
+    background-size: 50px 50px;
+    opacity: 0.1;
     z-index: -2;
+    animation: matrix-rain 20s linear infinite;
 }
 
-/* Matrix Rain Background */
+/* Scan Line Effect */
 body::after {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: 
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(80, 250, 123, 0.03) 2px,
-            rgba(80, 250, 123, 0.03) 4px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(80, 250, 123, 0.03) 2px,
-            rgba(80, 250, 123, 0.03) 4px
-        );
-    pointer-events: none;
-    z-index: -1;
-    animation: matrix-rain 20s linear infinite;
-}
-
-/* Floating Hacker Symbols */
-.hacker-symbols {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.hacker-symbols::before,
-.hacker-symbols::after {
-    content: '01';
-    position: absolute;
-    color: rgba(80, 250, 123, 0.1);
-    font-family: 'Fira Code', monospace;
-    font-size: 12px;
-    animation: float 15s ease-in-out infinite;
-}
-
-.hacker-symbols::before {
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.hacker-symbols::after {
-    top: 70%;
-    right: 10%;
-    animation-delay: 7s;
-}
-
-/* Scan Line Effect */
-.scan-line {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(80, 250, 123, 0.5),
-        transparent
-    );
-    pointer-events: none;
-    z-index: 1;
-    animation: scanline 8s linear infinite;
-}
-
-/* Corner Decorations */
-.corner-decoration {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--terminal-purple);
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--terminal-green) 50%, 
+        transparent 100%);
     opacity: 0.3;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.corner-decoration.top-left {
-    top: 20px;
-    left: 20px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.corner-decoration.top-right {
-    top: 20px;
-    right: 20px;
-    border-left: none;
-    border-bottom: none;
-}
-
-.corner-decoration.bottom-left {
-    bottom: 20px;
-    left: 20px;
-    border-right: none;
-    border-top: none;
-}
-
-.corner-decoration.bottom-right {
-    bottom: 20px;
-    right: 20px;
-    border-left: none;
-    border-top: none;
-}
-
-/* Glitch Effect on Hover */
-main:hover {
-    animation: glitch 0.3s ease-in-out;
-}
-
-/* Enhanced Terminal Cursor */
-.terminal-cursor::before {
-    content: '█';
-    color: var(--terminal-pink);
-    animation: blink 1s infinite;
-}
-
-/* Circuit Board Pattern */
-.circuit-pattern {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(90deg, rgba(189, 147, 249, 0.05) 1px, transparent 1px),
-        linear-gradient(rgba(189, 147, 249, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
     z-index: -1;
-}
-
-/* Pulse Effect for Links */
-a:hover {
-    animation: pulse 0.5s ease-in-out;
-}
-
-/* Enhanced Code Blocks */
-pre {
-    position: relative;
-    background: linear-gradient(
-        135deg,
-        var(--terminal-current-line) 0%,
-        rgba(68, 71, 90, 0.8) 100%
-    );
-    border: 1px solid var(--terminal-purple);
-    box-shadow: 
-        0 0 10px rgba(189, 147, 249, 0.2),
-        inset 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-pre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        var(--terminal-purple),
-        var(--terminal-cyan),
-        var(--terminal-pink),
-        var(--terminal-purple)
-    );
-    background-size: 200% 100%;
-    animation: matrix-rain 3s linear infinite;
+    animation: scan-line 8s linear infinite;
 }
 
 body {
@@ -345,62 +140,160 @@ body {
     text-align: left;
     font-size: 16px;
     position: relative;
+    overflow-x: hidden;
+}
+
+/* Corner Decorations */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-top: 3px solid var(--terminal-green);
+    border-left: 3px solid var(--terminal-green);
+    z-index: 1000;
+    animation: corner-glow 3s ease-in-out infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-top: 3px solid var(--terminal-purple);
+    border-right: 3px solid var(--terminal-purple);
+    z-index: 1000;
+    animation: corner-glow 3s ease-in-out infinite 1.5s;
+}
+
+/* Bottom Left Corner */
+main::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-bottom: 3px solid var(--terminal-cyan);
+    border-left: 3px solid var(--terminal-cyan);
+    z-index: 1000;
+    animation: corner-glow 3s ease-in-out infinite 0.75s;
+}
+
+/* Bottom Right Corner */
+main::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-bottom: 3px solid var(--terminal-pink);
+    border-right: 3px solid var(--terminal-pink);
+    z-index: 1000;
+    animation: corner-glow 3s ease-in-out infinite 2.25s;
+}
+
+/* Floating Hacker Symbols */
+body::before {
+    content: '01';
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    color: var(--terminal-green);
+    font-family: 'Fira Code', monospace;
+    font-size: 1.5em;
+    opacity: 0.3;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+body::after {
+    content: '10';
+    position: fixed;
+    top: 20%;
+    right: 10%;
+    color: var(--terminal-purple);
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2em;
+    opacity: 0.3;
+    z-index: -1;
+    animation: float 8s ease-in-out infinite 2s;
 }
 
 main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 2em auto;
-    padding: 2em;
-    border: 1px solid var(--terminal-border);
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 3em 1em;
+    border: 2px solid transparent;
     border-radius: 8px;
-    background: linear-gradient(
-        135deg,
-        rgba(40, 42, 54, 0.95) 0%,
-        rgba(40, 42, 54, 0.85) 100%
-    );
+    background: 
+        linear-gradient(45deg, var(--terminal-bg), var(--terminal-current-line)),
+        linear-gradient(45deg, var(--terminal-purple), var(--terminal-cyan), var(--terminal-green), var(--terminal-pink), var(--terminal-purple));
+    background-size: 100% 100%, 200% 200%;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
     box-shadow: 
-        0 0 30px rgba(189, 147, 249, 0.3),
-        0 0 60px rgba(0, 0, 0, 0.5),
-        inset 0 0 30px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(15px);
+        0 0 20px rgba(189, 147, 249, 0.2),
+        0 0 40px rgba(139, 233, 253, 0.1),
+        inset 0 0 20px rgba(40, 42, 54, 0.5);
     position: relative;
-    z-index: 2;
-    min-height: calc(100vh - 4em);
+    animation: gradient-border 8s ease infinite;
 }
 
+/* Enhanced Main Content Border */
 main::before {
     content: '';
     position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: linear-gradient(
-        45deg,
-        var(--terminal-purple),
-        var(--terminal-cyan),
-        var(--terminal-pink),
-        var(--terminal-green),
-        var(--terminal-purple)
-    );
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--terminal-purple), 
+        var(--terminal-cyan), 
+        var(--terminal-green), 
+        var(--terminal-pink), 
+        var(--terminal-purple));
     background-size: 400% 400%;
-    border-radius: 11px;
+    border-radius: 10px;
     z-index: -1;
-    animation: matrix-rain 4s ease infinite;
-    opacity: 0.6;
+    animation: gradient-border 6s ease infinite;
 }
 
 h1, h2{
     color: var(--terminal-purple);
     font-family: 'Fira Code', monospace;
-    border-bottom: 1px solid var(--terminal-border);
+    border-bottom: 2px solid var(--terminal-border);
     padding-bottom: 0.3em;
+    text-shadow: 0 0 10px rgba(189, 147, 249, 0.3);
+    position: relative;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        var(--terminal-purple), 
+        var(--terminal-cyan), 
+        var(--terminal-green));
+    background-size: 200% 100%;
+    animation: gradient-border 4s ease infinite;
 }
 
  h3, h4 {
     color: var(--terminal-purple);
     font-family: 'Fira Code', monospace;
+    text-shadow: 0 0 5px rgba(189, 147, 249, 0.2);
 }
 
 h1 {
@@ -424,19 +317,38 @@ h4 {
 strong,
 b {
 	font-weight: 700;
+    color: var(--terminal-yellow);
+    text-shadow: 0 0 5px rgba(241, 250, 140, 0.3);
 }
 
 a {
     color: var(--terminal-cyan);
     text-decoration: none;
     border-bottom: 1px dotted var(--terminal-cyan);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 a:hover {
     color: var(--terminal-pink);
-    border-bottom: 1px solid var(--terminal-pink);
-    text-shadow: 0 0 8px rgba(255, 121, 198, 0.3);
+    border-bottom: 2px solid var(--terminal-pink);
+    text-shadow: 0 0 8px rgba(255, 121, 198, 0.5);
+    transform: translateY(-1px);
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--terminal-cyan), var(--terminal-pink));
+    transition: width 0.3s ease;
+}
+
+a:hover::before {
+    width: 100%;
 }
 
 p {
@@ -452,71 +364,230 @@ textarea {
 input {
 	font-size: 16px;
 }
+
+/* Enhanced Table Styling */
 table {
 	width: 100%;
 	border-collapse: collapse;
 	margin: 1em 0;
+    border: 2px solid var(--terminal-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(189, 147, 249, 0.1);
 }
+
+table:hover {
+    box-shadow: 0 0 25px rgba(189, 147, 249, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Image Styling */
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 4px;
-	border: 1px solid var(--terminal-border);
+	border-radius: 8px;
+	border: 2px solid var(--terminal-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(189, 147, 249, 0.1);
 }
 
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
+    border-color: var(--terminal-purple);
+}
+
+/* Enhanced Code Styling */
 code {
-    background-color: var(--terminal-current-line);
+    background: linear-gradient(135deg, 
+        var(--terminal-current-line), 
+        rgba(68, 71, 90, 0.8));
     color: var(--terminal-green);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
     font-family: 'Fira Code', monospace;
     border: 1px solid var(--terminal-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 5px rgba(80, 250, 123, 0.3);
 }
 
+/* Enhanced Pre Styling */
 pre {
-    background-color: var(--terminal-current-line);
-    padding: 1em;
-    border-radius: 4px;
+    background: linear-gradient(135deg, 
+        var(--terminal-current-line), 
+        rgba(68, 71, 90, 0.9));
+    padding: 1.5em;
+    border-radius: 8px;
     overflow-x: auto;
     color: var(--terminal-foreground);
     font-family: 'Fira Code', monospace;
-    border: 1px solid var(--terminal-border);
+    border: 2px solid var(--terminal-border);
     position: relative;
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.1);
 }
+
+pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--terminal-purple), 
+        var(--terminal-cyan), 
+        var(--terminal-green), 
+        var(--terminal-pink));
+    background-size: 200% 100%;
+    animation: gradient-border 4s ease infinite;
+}
+
 pre > code {
 	all: unset;
     border: none;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
 }
+
+/* Enhanced Blockquote Styling */
 blockquote {
     border-left: 4px solid var(--terminal-purple);
-    padding: 0 0 0 20px;
-    margin: 0px;
+    padding: 1em 0 1em 1.5em;
+    margin: 1.5em 0;
     font-style: italic;
     color: var(--terminal-comment);
+    background: linear-gradient(90deg, 
+        rgba(189, 147, 249, 0.1), 
+        transparent);
+    border-radius: 0 8px 8px 0;
+    position: relative;
 }
+
+blockquote::before {
+    content: '"';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    font-size: 3em;
+    color: var(--terminal-purple);
+    opacity: 0.5;
+}
+
+/* Enhanced HR Styling */
 hr {
     border: none;
-    border-top: 1px solid var(--terminal-border);
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--terminal-purple), 
+        var(--terminal-cyan), 
+        var(--terminal-green), 
+        transparent);
     margin: 2em 0;
+    border-radius: 1px;
+    animation: gradient-border 6s ease infinite;
+}
+
+/* Enhanced List Styling */
+ul, ol {
+    padding-left: 1.5em;
+}
+
+ul li {
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+ul li::before {
+    content: '❯';
+    position: absolute;
+    left: -1.5em;
+    color: var(--terminal-green);
+    font-weight: bold;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+ol li {
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+ol li::before {
+    content: counter(list-item) '.';
+    position: absolute;
+    left: -1.5em;
+    color: var(--terminal-purple);
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Enhanced Button Styling */
+button, .btn {
+    background: linear-gradient(135deg, 
+        var(--terminal-purple), 
+        var(--terminal-cyan));
+    color: var(--terminal-foreground);
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before, .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+button:hover::before, .btn:hover::before {
+    left: 100%;
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 5px rgba(248, 248, 242, 0.5);
 }
 
 /* Terminal-like scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--terminal-bg);
+    border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--terminal-border);
-    border-radius: 4px;
+    background: linear-gradient(180deg, 
+        var(--terminal-purple), 
+        var(--terminal-cyan));
+    border-radius: 6px;
+    border: 2px solid var(--terminal-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--terminal-purple);
+    background: linear-gradient(180deg, 
+        var(--terminal-cyan), 
+        var(--terminal-green));
 }
 
 /* Terminal cursor effect */
@@ -544,25 +615,46 @@ hr {
 /* Table styles */
 th, td {
     border: 1px solid var(--terminal-border);
-    padding: 0.5em;
+    padding: 0.8em;
     text-align: left;
+    transition: all 0.2s ease;
 }
 
 th {
-    background-color: var(--terminal-current-line);
+    background: linear-gradient(135deg, 
+        var(--terminal-current-line), 
+        rgba(189, 147, 249, 0.1));
     color: var(--terminal-purple);
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(189, 147, 249, 0.3);
 }
 
+td:hover {
+    background-color: rgba(189, 147, 249, 0.1);
+    color: var(--terminal-cyan);
+}
+
+/* Mobile Optimizations */
 @media (max-width: 720px) {
     body {
         font-size: 14px;
     }
-    main {
-        width: 95%;
-        margin: 1em auto;
-        padding: 1em;
-        min-height: calc(100vh - 2em);
+    
+    /* Disable heavy animations on mobile */
+    body::before,
+    body::after,
+    main::before,
+    main::after {
+        display: none;
     }
+    
+    main {
+        padding: 1em;
+        width: calc(100% - 1em);
+        border-width: 1px;
+        animation: none;
+    }
+    
     h1 {
         font-size: 2em;
     }
@@ -573,36 +665,17 @@ th {
         font-size: 1.2em;
     }
     
-    /* Hide some decorations on mobile for performance */
-    .hacker-symbols,
-    .scan-line,
-    .circuit-pattern {
-        display: none;
+    /* Simplify effects for mobile */
+    img:hover {
+        transform: none;
     }
     
-    .corner-decoration {
-        width: 30px;
-        height: 30px;
+    table:hover {
+        transform: none;
     }
     
-    .corner-decoration.top-left {
-        top: 10px;
-        left: 10px;
-    }
-    
-    .corner-decoration.top-right {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .corner-decoration.bottom-left {
-        bottom: 10px;
-        left: 10px;
-    }
-    
-    .corner-decoration.bottom-right {
-        bottom: 10px;
-        right: 10px;
+    pre::before {
+        height: 2px;
     }
 }
 
@@ -622,285 +695,4 @@ th {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
-}
-
-/* Enhanced Links with Hacker Style */
-a {
-    color: var(--terminal-cyan);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--terminal-cyan);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-a:hover {
-    color: var(--terminal-pink);
-    border-bottom: 1px solid var(--terminal-pink);
-    text-shadow: 0 0 8px rgba(255, 121, 198, 0.5);
-    transform: translateY(-1px);
-}
-
-a::before {
-    content: '>';
-    position: absolute;
-    left: -15px;
-    opacity: 0;
-    color: var(--terminal-green);
-    transition: all 0.3s ease;
-}
-
-a:hover::before {
-    opacity: 1;
-    left: -20px;
-}
-
-/* Enhanced Headers */
-h1, h2 {
-    color: var(--terminal-purple);
-    font-family: 'Fira Code', monospace;
-    border-bottom: 2px solid var(--terminal-border);
-    padding-bottom: 0.3em;
-    position: relative;
-    text-shadow: 0 0 10px rgba(189, 147, 249, 0.3);
-}
-
-h1::before, h2::before {
-    content: '//';
-    position: absolute;
-    left: -30px;
-    color: var(--terminal-comment);
-    font-size: 0.8em;
-    opacity: 0.7;
-}
-
-/* Enhanced Lists */
-ul, ol {
-    position: relative;
-    padding-left: 1.5em;
-}
-
-ul li::before {
-    content: '→';
-    color: var(--terminal-green);
-    font-weight: bold;
-    position: absolute;
-    left: -1.5em;
-}
-
-ol li::before {
-    content: counter(list-item) '.';
-    color: var(--terminal-cyan);
-    font-weight: bold;
-    position: absolute;
-    left: -1.5em;
-}
-
-/* Enhanced Blockquotes */
-blockquote {
-    border-left: 4px solid var(--terminal-purple);
-    padding: 0 0 0 20px;
-    margin: 0px;
-    font-style: italic;
-    color: var(--terminal-comment);
-    background: rgba(189, 147, 249, 0.05);
-    border-radius: 0 4px 4px 0;
-    position: relative;
-}
-
-blockquote::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    font-size: 2em;
-    color: var(--terminal-purple);
-    opacity: 0.3;
-}
-
-/* Enhanced Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1em 0;
-    border: 1px solid var(--terminal-border);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-th, td {
-    border: 1px solid var(--terminal-border);
-    padding: 0.5em;
-    text-align: left;
-}
-
-th {
-    background: linear-gradient(
-        135deg,
-        var(--terminal-current-line) 0%,
-        rgba(68, 71, 90, 0.8) 100%
-    );
-    color: var(--terminal-purple);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(68, 71, 90, 0.1);
-}
-
-tr:hover {
-    background-color: rgba(189, 147, 249, 0.1);
-}
-
-/* Enhanced Code Inline */
-code {
-    background-color: var(--terminal-current-line);
-    color: var(--terminal-green);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-    font-family: 'Fira Code', monospace;
-    border: 1px solid var(--terminal-border);
-    position: relative;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Enhanced Images */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    border: 1px solid var(--terminal-border);
-    box-shadow: 0 0 10px rgba(189, 147, 249, 0.2);
-    transition: all 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(189, 147, 249, 0.4);
-}
-
-/* Enhanced HR */
-hr {
-    border: none;
-    border-top: 2px solid var(--terminal-border);
-    margin: 2em 0;
-    position: relative;
-}
-
-hr::before {
-    content: '//';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--terminal-bg);
-    padding: 0 10px;
-    color: var(--terminal-comment);
-    font-family: 'Fira Code', monospace;
-}
-
-/* Enhanced Checkboxes */
-input[type="checkbox"] {
-    accent-color: var(--terminal-green);
-    transform: scale(1.2);
-    margin-right: 0.5em;
-}
-
-/* Enhanced Buttons */
-button {
-    background: linear-gradient(
-        135deg,
-        var(--terminal-current-line) 0%,
-        rgba(68, 71, 90, 0.8) 100%
-    );
-    color: var(--terminal-green);
-    border: 1px solid var(--terminal-border);
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Fira Code', monospace;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-    background: linear-gradient(
-        135deg,
-        var(--terminal-purple) 0%,
-        rgba(189, 147, 249, 0.8) 100%
-    );
-    color: var(--terminal-bg);
-    box-shadow: 0 0 10px rgba(189, 147, 249, 0.4);
-    transform: translateY(-1px);
-}
-
-/* Enhanced Selection */
-::selection {
-    background-color: var(--terminal-selection);
-    color: var(--terminal-foreground);
-    text-shadow: 0 0 5px rgba(189, 147, 249, 0.5);
-}
-
-/* Enhanced Scrollbar */
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--terminal-bg);
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        135deg,
-        var(--terminal-border) 0%,
-        var(--terminal-purple) 100%
-    );
-    border-radius: 6px;
-    border: 2px solid var(--terminal-bg);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        135deg,
-        var(--terminal-purple) 0%,
-        var(--terminal-pink) 100%
-    );
-}
-
-/* Enhanced Focus States */
-:focus {
-    outline: 2px solid var(--terminal-purple);
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-/* Performance optimizations */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    :root {
-        --terminal-border: #ffffff;
-        --terminal-foreground: #ffffff;
-        --terminal-bg: #000000;
-    }
-}
-
-/* Fix for layout-specific main containers */
-.prose {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    color: var(--terminal-foreground);
 }

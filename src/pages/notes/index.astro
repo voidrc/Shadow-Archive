@@ -130,20 +130,9 @@ for (const cat of writeupsSortedCategories) {
 		</style>
 	</head>
 	<body>
-		<!-- Background Decorations -->
-		<div class="hacker-symbols"></div>
-		<div class="scan-line"></div>
-		<div class="circuit-pattern"></div>
-		<div class="corner-decoration top-left"></div>
-		<div class="corner-decoration top-right"></div>
-		<div class="corner-decoration bottom-left"></div>
-		<div class="corner-decoration bottom-right"></div>
-		
 		<Header />
 		<main>
-			<h1>❯ Notes & Writeups</h1>
-			
-			<h2>📚 Notes</h2>
+			<h1>Notes</h1>
 			<div class="tree">
 				{sortedCategories.map((cat) => (
 					<div class="tree-category-hover">
@@ -159,8 +148,7 @@ for (const cat of writeupsSortedCategories) {
 					</div>
 				))}
 			</div>
-			
-			<h2>🔍 Writeups</h2>
+			<h1>Write-Ups</h1>
 			<div class="tree">
 				{writeupsSortedCategories.map((cat) => (
 					<div class="tree-category-hover">
