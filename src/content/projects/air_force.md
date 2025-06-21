@@ -1,6 +1,5 @@
 ---
 title: Air Force Programming
-description: A cursed C/C++ header file that replaces standard keywords with military aircraft references.
 pubDate: 2025-06-12
 heroImage: ../../assets/header.webp
 ---

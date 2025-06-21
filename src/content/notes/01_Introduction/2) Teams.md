@@ -1,6 +1,5 @@
 ---
 title: Colored Teams
-description: A quick dive into the strategic roles played by different security teams.
 category: Introduction
 pubDate: 2025-06-15
 heroImage: ../../../assets/teams.png

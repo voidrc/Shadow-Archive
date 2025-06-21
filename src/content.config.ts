@@ -7,7 +7,6 @@ const notes = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({ image }) => z.object({
 		title: z.string(),
-		description: z.string(),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
@@ -20,7 +19,6 @@ const projects = defineCollection({
 	loader: glob({ base: './src/content/projects', pattern: '**/*.md' }),
 	schema: ({ image }) => z.object({
 		title: z.string(),
-		description: z.string(),
 		pubDate: z.coerce.date(),
 		heroImage: image().optional(),
 	}),
@@ -30,7 +28,6 @@ const writeups = defineCollection({
 	loader: glob({ base: './src/content/writeups', pattern: '**/*.{md,mdx}' }),
 	schema: ({ image }) => z.object({
 		title: z.string(),
-		description: z.string(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: image().optional(),

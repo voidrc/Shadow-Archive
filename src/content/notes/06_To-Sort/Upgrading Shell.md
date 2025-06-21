@@ -1,6 +1,5 @@
 ---
 title: Upgrading TTY
-description: From simple tty to functional Shell
 category: To-Sort
 pubDate: 2025-06-16
 heroImage: ../../../assets/reverse_shell.png

@@ -1,6 +1,5 @@
 ---
 title: 'Connections'
-description: 'Network connections and their types'
 category: Networking
 pubDate: 2025-06-16
 ---

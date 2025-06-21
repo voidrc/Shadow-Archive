@@ -1,6 +1,5 @@
 ---
 title: Introduction
-description: Introduction to the topic
 category: Introduction
 pubDate: 2024-03-20
 heroImage: ../../../assets/getting_started.jpg

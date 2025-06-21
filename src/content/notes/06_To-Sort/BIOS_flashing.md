@@ -1,6 +1,5 @@
 ---
 title: BIOS
-description: Instruction to use CH341A Mini Programmer
 category: To-Sort
 pubDate: 2025-06-16
 heroImage: ../../../assets/to-sort.jpg
