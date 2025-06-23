@@ -1,5 +1,6 @@
 ---
 title: 'Time-Shift'
+description: 'System back-up and recovery'
 category: Linux
 pubDate: 2025-06-16
 heroImage: '../../../assets/snapshot.jpg'

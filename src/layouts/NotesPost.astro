@@ -8,12 +8,12 @@ import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'notes'>['data'];
 
-const { title, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} />
+		<BaseHead title={title} description={description} />
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 		<style>
 			main {

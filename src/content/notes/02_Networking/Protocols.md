@@ -1,5 +1,6 @@
 ---
 title: 'Protocols'
+description: 'Network protocols and their functions'
 category: Networking
 pubDate: 2025-06-16
 ---

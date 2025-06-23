@@ -1,5 +1,6 @@
 ---
 title: 'Introduction'
+description: 'First steps toward Freedom'
 category: Linux
 pubDate: 2025-06-16
 heroImage: '../../../assets/linux.png'

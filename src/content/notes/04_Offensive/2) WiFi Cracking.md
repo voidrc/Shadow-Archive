@@ -1,5 +1,6 @@
 ---
 title: 'WiFi Cracking'
+description: 'How to  broke into wifi network and some usefull tips'
 category: Offensive
 pubDate: 2025-06-16
 heroImage: '../../../assets/wifi.png'

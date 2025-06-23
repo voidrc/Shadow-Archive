@@ -1,5 +1,6 @@
 ---
 title: 'Test'
+description: 'How to get flags on Todd machine'
 pubDate: 'June 12 2025'
 heroImage: '../../../assets/commands.png'
 ---

@@ -1,5 +1,6 @@
 ---
 title: HoneyPot
+description: How to create HoneyPot
 category: To-Sort
 pubDate: 2025-06-16
 heroImage: ../../../assets/to-sort.jpg

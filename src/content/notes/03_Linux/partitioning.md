@@ -1,5 +1,6 @@
 ---
 title: 'Partitioning'
+description: 'How to separate `/home` from rest of system?'
 category: Linux
 pubDate: 2025-06-16
 heroImage: '../../../assets/partition.png'

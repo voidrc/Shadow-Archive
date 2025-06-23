@@ -1,5 +1,6 @@
 ---
 title: 'Addressing'
+description: 'IPv4/6, MAC addresses, Subnets'
 category: Networking
 pubDate: 2025-06-16
 ---

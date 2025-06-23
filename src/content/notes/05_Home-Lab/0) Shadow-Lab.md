@@ -1,5 +1,6 @@
 ---
 title: Shadow-Lab
+description: Once i find a job, this is the toys i am buying for my room's decoration.
 category: Home-Lab
 pubDate: 2025-06-19
 heroImage: ../../../assets/Shadow-Lab.jpg

@@ -1,5 +1,6 @@
 ---
 title: 'SSH'
+description: 'How to use SSH service properly'
 category: Linux
 pubDate: 2025-06-16
 heroImage: '../../../assets/ssh.png'
