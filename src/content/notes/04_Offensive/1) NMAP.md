@@ -4,6 +4,7 @@ category: Offensive
 pubDate: 2025-06-19
 heroImage: ../../../assets/nmap.png
 ---
+# Introduction
 Nmap(Network Mapper) is an open-source and versatile network scanning tool widely used in cybersecurity and IT fields. It helps security professionals, network administrators, and penetration testers to map out networks, discover active hosts, and identify open ports and services.
 
 ## Key Features of NMAP
