@@ -1,7 +1,7 @@
 ---
 title: Setting Up
 description: Before beginning any penetration testing engagement, it is essential to set up a reliable and efficient working environment.
-category: Offensive
+category: Introduction
 pubDate: 2025-07-08
 heroImage: ../../../assets/SettingUp.jpg
 ---
