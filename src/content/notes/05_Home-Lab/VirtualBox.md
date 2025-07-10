@@ -1,9 +1,9 @@
 ---
-title: 'VirtualBox'
-description: 'Guide to properly install VirtualBox into Arch'
-category: Linux
+title: VirtualBox
+description: Guide to properly install VirtualBox into Arch
+category: Home-Lab
 pubDate: 2025-06-16
-heroImage: '../../../assets/virtualbox.jpg'
+heroImage: ../../../assets/virtualbox.jpg
 ---
 
 ## **1. Install Required Packages**
@@ -11,7 +11,7 @@ heroImage: '../../../assets/virtualbox.jpg'
 Ensure you have **ALL** VirtualBox components:
 
 ```bash
-sudo pacman -Sy virtualbox virtualbox-host-dkms virtualbox-guest-iso
+sudo pacman -Sy virtualbox virtualbox-host-dkms virtualbox-guest-iso virtualbox-ext-oracle
 ```
 
 ---

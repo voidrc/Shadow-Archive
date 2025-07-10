@@ -50,3 +50,12 @@ Note-taking is an essential aspect of penetration testing, as the process genera
     Screenshots provide clear, moment-in-time evidence of results and are essential for proof-of-concept demonstrations and documentation. However, some processes cannot be fully captured in static images. In these cases, using an application like **Peek** to create animated GIFs offers an effective way to record and present all necessary steps in a concise and accessible format.
 
 ## **Virtualization**
+Even if we were trained by _Mr. Robot_ himself, we can't expect to be effective in the field without hands-on experience. You might wonder: _If we don’t test in the real world, how do we gain that experience?_ Welcome to the world of **Home Labs**. _(For reference, see the **Home-Lab** folder for a useful template.)_
+  
+Home labs play a critical role in cybersecurity training and development. They provide a safe, controlled environment to practice techniques, test tools, and refine workflows without risking unintended consequences on production systems. By building and maintaining a home lab, security professionals can develop practical skills, experiment freely, and deepen their understanding of real-world scenarios.
+
+To get started with a basic home lab setup, you’ll need virtualization software such as **VirtualBox** and/or **Proxmox VE**. Installation guides for these platforms are widely available online for all operating systems.
+
+If you're using **CachyOS** or any other Arch-based distribution, here is a dedicated installation guide for [VirtualBox](../05_Home-Lab/VirtualBox).
+
+## **Backups and Recovery**
