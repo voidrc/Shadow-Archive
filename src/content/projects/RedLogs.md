@@ -2,7 +2,7 @@
 title: Red-Logs
 description: The project includes two scripts designed to log all terminal input and output, encrypt the logs, and securely store them on an external hard drive.
 pubDate: 2025-07-11
-heroImage: ../../../assets/RedLogs.jpg
+heroImage: ../../assets/RedLogs.jpg
 ---
 > The scripts are designed with the **FISH** shell in mind. If you intend to use these scripts with other shells, you will need to modify them accordingly.
 
