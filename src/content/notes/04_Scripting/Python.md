@@ -78,7 +78,7 @@ print(z)
 ### Output Variables
 `print()` function is often used to output variables.
 
-You output multiple variables,,  separated by a comma:
+You output multiple variables,  separated by a comma:
 ```python
 x = "Python"  
 y = "is"  
@@ -94,6 +94,7 @@ z = "awesome"
 print(x + y + z)
 ```
 > Notice the space character after **"Python "** and **"is "**, without them the result would be **"Pythonisawesome"**.
+> To add a space between them, add a `" "`: **c = a + " " + b**
 
 For numbers, the `+` character works as a mathematical operator:
 ```python
@@ -194,3 +195,289 @@ If you want to specify the data type, you can use the following constructor func
 ---
 
 ## Numbers
+There are 3 numeric types in Python:
+- `int`
+- `float`
+- `complex`
+
+### Int
+Int, or integer, is a whole number:
+```python
+x = 1
+y = 97815425126521
+z = -3255522
+```
+
+### Float
+Float, or "floating point number" is a number that contains decimals. It can also be scientific numbers with an `e` to indicate the power of 10:
+```python
+x = 1.10  
+y = 1.0  
+z = -35.59
+
+a = 35e3  
+b = 12E4  
+c = -87.7e100
+```
+
+### Complex
+Complex numbers are written with a "j" as the imaginary part:
+```python
+x = 3+5j  
+y = 5j  
+z = -5j
+```
+
+### Conversion
+You can convert from one type to another with the `int()`, `float()`, and `complex()` methods:
+```python
+x = 1    # int  
+y = 2.8  # float  
+z = 1j   # complex  
+  
+#convert from int to float:  
+a = float(x)  
+  
+#convert from float to int:  
+b = int(y)  
+  
+#convert from int to complex:  
+c = complex(x)
+```
+> You can not convert complex into another type
+
+### Random Number
+Python does not have a `random()` function to make a random number, but Python has a built-in module called `random` that can be used to make random numbers:
+```python
+import random  
+  
+print(random.randrange(1, 10))
+```
+
+---
+
+## Casting
+There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.
+
+Casting in python is therefore done using constructor functions:
+
+`int()` - constructs an integer number from an integer literal, a float literal (by removing all decimals), or a string literal (providing the string represents a whole number)
+```python
+x = int(1)   # x will be 1  
+y = int(2.8) # y will be 2  
+z = int("3") # z will be 3
+```
+
+`float()` - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)
+```python
+x = float(1)     # x will be 1.0  
+y = float(2.8)   # y will be 2.8  
+z = float("3")   # z will be 3.0  
+w = float("4.2") # w will be 4.2
+```
+
+`str()` - constructs a string from a wide variety of data types, including strings, integer literals and float literals
+```python
+x = str("s1") # x will be 's1'  
+y = str(2)    # y will be '2'  
+z = str(3.0)  # z will be '3.0'
+```
+
+---
+## Strings
+1) Strings in python are surrounded by either single quotation marks, or double quotation marks.
+2) You can use quotes inside a string, as long as they don't match the quotes surrounding the string
+3) You can assign a multiline string to a variable by using three quotes or three single quotes
+4) Strings are arrays
+	- a single character is simply a string with a length of 1
+	- Square brackets can be used to access elements of the string
+	- Since strings are arrays, we can loop through the characters in a string, with a `for` loop
+5) To get the length of a string, use the `len(x)` function
+6) To check if a certain phrase or character is present in a string, we can use the keyword `in`
+7) To check if a certain phrase or character is NOT present in a string, we can use the keyword `not in`
+```python
+# 1
+print("Hello")  
+print('Hello')
+
+# 2
+print("It's alright")  
+print("He is called 'Johnny'")  
+print('He is called "Johnny"')
+
+# 3
+a = """Lorem ipsum dolor sit amet,  
+consectetur adipiscing elit,  
+sed do eiusmod tempor incididunt  
+ut labore et dolore magna aliqua."""
+
+b = '''Lorem ipsum dolor sit amet,  
+consectetur adipiscing elit,  
+sed do eiusmod tempor incididunt  
+ut labore et dolore magna aliqua.'''
+
+# 4
+a = "Hello, World!"  
+print(a[1])
+
+for x in "banana":  
+  print(x)
+
+# 5
+a = "Hello, World!"  
+print(len(a))
+
+# 6
+txt = "The best things in life are free!"  
+print("free" in txt)
+
+txt = "The best things in life are free!"  
+if "free" in txt:  
+  print("Yes, 'free' is present.")
+
+# 7
+txt = "The best things in life are free!"  
+print("expensive" not in txt)
+
+txt = "The best things in life are free!"  
+if "expensive" not in txt:  
+  print("No, 'expensive' is NOT present.")
+```
+
+### Slicing
+You can return a range of characters by using the slice syntax.
+
+Specify the start index and the end index, separated by a colon, to return a part of the string:
+```python
+b = "Hello, World!"  
+print(b[2:5])
+print(b[:5])
+print(b[2:])
+print(b[-5:-2])
+```
+> The first character has index 0.
+> End index in slice syntax is not included
+
+### Modify
+Python has a set of built-in methods that you can use on strings.
+```python
+# The "upper()" method returns the string in upper case:
+a = "Hello, World!"  
+print(a.upper())
+
+# The "lower()" method returns the string in lower case:
+a = "Hello, World!"  
+print(a.lower())
+
+# The "strip()" method removes any whitespace from the beginning or the end:
+a = " Hello, World! "  
+print(a.strip()) # returns "Hello, World!"
+
+# The "replace()" method replaces a string with another string:
+a = "Hello, World!"  
+print(a.replace("H", "J"))
+
+# The `split()` method splits the string into substrings if it finds instances of the separator:
+a = "Hello, World!"  
+print(a.split(",")) # returns ['Hello', ' World!']
+```
+> Whitespace is the space before and/or after the actual text, and very often you want to remove this space.
+
+### Format
+As we learned in the Python Variables chapter, we cannot combine strings and numbers like this:
+```python
+age = 36  
+txt = "My name is John, I am " + age  
+print(txt)
+```
+> But we can combine strings and numbers by using _f-strings_ or the `format()` method!
+
+To specify a string as an f-string, simply put an `f` in front of the string literal, and add curly brackets `{}` as placeholders for variables and other operations:
+```python
+age = 36  
+txt = f"My name is John, I am {age}"  
+print(txt)
+```
+> A placeholder can contain variables, operations, functions, and modifiers to format the value.
+
+A modifier is included by adding a colon `:` followed by a legal formatting type, like `.2f` which means fixed point number with 2 decimals:
+```python
+price = 59  
+txt = f"The price is {price:.2f} dollars"  
+print(txt)
+```
+
+A placeholder can contain Python code, like math operations:
+```python
+txt = f"The price is {20 * 59} dollars"  
+print(txt)
+```
+
+### Escape Characters
+To insert characters that are illegal in a string, use an escape character.
+An escape character is a backslash `\` followed by the character you want to insert.
+
+| Code  | Result          |
+| ----- | --------------- |
+| \\'   | Single Quote    |
+| \\\   | Backslash       |
+| \\n   | New Line        |
+| \\r   | Carriage Return |
+| \\t   | Tab             |
+| \\b   | Backspace       |
+| \\f   | Form Feed       |
+| \\ooo | Octal Value     |
+| \\xhh | Hex Value       |
+### String Methods
+Python has a set of built-in methods that you can use on strings.
+
+|Method|Description|
+|---|---|
+|[capitalize()](https://www.w3schools.com/python/ref_string_capitalize.asp)|Converts the first character to upper case|
+|[casefold()](https://www.w3schools.com/python/ref_string_casefold.asp)|Converts string into lower case|
+|[center()](https://www.w3schools.com/python/ref_string_center.asp)|Returns a centered string|
+|[count()](https://www.w3schools.com/python/ref_string_count.asp)|Returns the number of times a specified value occurs in a string|
+|[encode()](https://www.w3schools.com/python/ref_string_encode.asp)|Returns an encoded version of the string|
+|[endswith()](https://www.w3schools.com/python/ref_string_endswith.asp)|Returns true if the string ends with the specified value|
+|[expandtabs()](https://www.w3schools.com/python/ref_string_expandtabs.asp)|Sets the tab size of the string|
+|[find()](https://www.w3schools.com/python/ref_string_find.asp)|Searches the string for a specified value and returns the position of where it was found|
+|[format()](https://www.w3schools.com/python/ref_string_format.asp)|Formats specified values in a string|
+|format_map()|Formats specified values in a string|
+|[index()](https://www.w3schools.com/python/ref_string_index.asp)|Searches the string for a specified value and returns the position of where it was found|
+|[isalnum()](https://www.w3schools.com/python/ref_string_isalnum.asp)|Returns True if all characters in the string are alphanumeric|
+|[isalpha()](https://www.w3schools.com/python/ref_string_isalpha.asp)|Returns True if all characters in the string are in the alphabet|
+|[isascii()](https://www.w3schools.com/python/ref_string_isascii.asp)|Returns True if all characters in the string are ascii characters|
+|[isdecimal()](https://www.w3schools.com/python/ref_string_isdecimal.asp)|Returns True if all characters in the string are decimals|
+|[isdigit()](https://www.w3schools.com/python/ref_string_isdigit.asp)|Returns True if all characters in the string are digits|
+|[isidentifier()](https://www.w3schools.com/python/ref_string_isidentifier.asp)|Returns True if the string is an identifier|
+|[islower()](https://www.w3schools.com/python/ref_string_islower.asp)|Returns True if all characters in the string are lower case|
+|[isnumeric()](https://www.w3schools.com/python/ref_string_isnumeric.asp)|Returns True if all characters in the string are numeric|
+|[isprintable()](https://www.w3schools.com/python/ref_string_isprintable.asp)|Returns True if all characters in the string are printable|
+|[isspace()](https://www.w3schools.com/python/ref_string_isspace.asp)|Returns True if all characters in the string are whitespaces|
+|[istitle()](https://www.w3schools.com/python/ref_string_istitle.asp)|Returns True if the string follows the rules of a title|
+|[isupper()](https://www.w3schools.com/python/ref_string_isupper.asp)|Returns True if all characters in the string are upper case|
+|[join()](https://www.w3schools.com/python/ref_string_join.asp)|Joins the elements of an iterable to the end of the string|
+|[ljust()](https://www.w3schools.com/python/ref_string_ljust.asp)|Returns a left justified version of the string|
+|[lower()](https://www.w3schools.com/python/ref_string_lower.asp)|Converts a string into lower case|
+|[lstrip()](https://www.w3schools.com/python/ref_string_lstrip.asp)|Returns a left trim version of the string|
+|[maketrans()](https://www.w3schools.com/python/ref_string_maketrans.asp)|Returns a translation table to be used in translations|
+|[partition()](https://www.w3schools.com/python/ref_string_partition.asp)|Returns a tuple where the string is parted into three parts|
+|[replace()](https://www.w3schools.com/python/ref_string_replace.asp)|Returns a string where a specified value is replaced with a specified value|
+|[rfind()](https://www.w3schools.com/python/ref_string_rfind.asp)|Searches the string for a specified value and returns the last position of where it was found|
+|[rindex()](https://www.w3schools.com/python/ref_string_rindex.asp)|Searches the string for a specified value and returns the last position of where it was found|
+|[rjust()](https://www.w3schools.com/python/ref_string_rjust.asp)|Returns a right justified version of the string|
+|[rpartition()](https://www.w3schools.com/python/ref_string_rpartition.asp)|Returns a tuple where the string is parted into three parts|
+|[rsplit()](https://www.w3schools.com/python/ref_string_rsplit.asp)|Splits the string at the specified separator, and returns a list|
+|[rstrip()](https://www.w3schools.com/python/ref_string_rstrip.asp)|Returns a right trim version of the string|
+|[split()](https://www.w3schools.com/python/ref_string_split.asp)|Splits the string at the specified separator, and returns a list|
+|[splitlines()](https://www.w3schools.com/python/ref_string_splitlines.asp)|Splits the string at line breaks and returns a list|
+|[startswith()](https://www.w3schools.com/python/ref_string_startswith.asp)|Returns true if the string starts with the specified value|
+|[strip()](https://www.w3schools.com/python/ref_string_strip.asp)|Returns a trimmed version of the string|
+|[swapcase()](https://www.w3schools.com/python/ref_string_swapcase.asp)|Swaps cases, lower case becomes upper case and vice versa|
+|[title()](https://www.w3schools.com/python/ref_string_title.asp)|Converts the first character of each word to upper case|
+|[translate()](https://www.w3schools.com/python/ref_string_translate.asp)|Returns a translated string|
+|[upper()](https://www.w3schools.com/python/ref_string_upper.asp)|Converts a string into upper case|
+|[zfill()](https://www.w3schools.com/python/ref_string_zfill.asp)|Fills the string with a specified number of 0 values at the beginning
+> All string methods return new values. They do not change the original string.
+
+---
