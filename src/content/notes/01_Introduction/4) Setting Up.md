@@ -56,6 +56,6 @@ Home labs play a critical role in cybersecurity training and development. They p
 
 To get started with a basic home lab setup, you’ll need virtualization software such as **VirtualBox** and/or **Proxmox VE**. Installation guides for these platforms are widely available online for all operating systems.
 
-If you're using **CachyOS** or any other Arch-based distribution, here is a dedicated installation guide for [VirtualBox](../05_Home-Lab/VirtualBox).
+If you're using **CachyOS** or any other Arch-based distribution, here is a dedicated installation guide for [VirtualBox](VirtualBox.md).
 
 ## **Backups and Recovery**
